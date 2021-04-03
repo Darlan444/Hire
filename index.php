@@ -11,7 +11,7 @@
   // conexao do banco
   require_once "config/config.php";
 
-  // Define variables and initialize with empty values
+  // Define variaveis e inicializa com valores vazios
   $username = $password = '';
   $username_err = $password_err = '';
 
