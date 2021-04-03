@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+p{
+    margin: 0;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100%;
+    background-color: #ebebeb;
+}
+
+.navbar{
+    background-color: black;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-brand{
+    color: white;
+}
+.navbar-light .navbar-brand:hover{
+    color: white;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 0 auto;
+    
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .form-signin input[type="password"] {
+    height: 3em;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+.btn-login{
+    background-color: #151515;
+    color: white;
+    border-radius: 10px;
+    height: 3em;
+}
+.btn-login:hover{
+    background-color: #000000;
+}
+
+.text-home{
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+/*quem somos*/
+.lista_quem_somos{
+    list-style-type: none;
+    
+}
+.btn-quemsomos{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-radius: 10%;
+}
+
+.ul_quem_somos .lista_quem_somos{
+    display: inline;
+    
+}
+
+.grupo_lista{
+    margin-top: 2em;
+}
+
+/*menu dashboard*/
+.lista_menu{
+    list-style-type: none;
+    
+}
+.btn-menu{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+.btn-menu:hover{
+    background-color: rgb(220, 220, 220);
+    
+    
+}
+
+.ul_menu{
+    padding-left: 0;
+}
+
+.ul_menu .lista_menu{
+    display: inline;
+    
+    
+}
+
+.grupo_lista{
+    margin-top: 2em;
+}
+
+/*cards*/
+.btn-card{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-weight: 300;
+    width: 100%;
+}
+.btn-card:hover{
+    color: whitesmoke;
+}
+
+.card .card-img-top{
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+/*navbar dashboard*/
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.98);
+    font-weight: 300;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: white;
+}
+
+/*salvar*/
+.salvar_icon{
+    float: right;
+}
+
+.linha{
+    max-width: 50px;
+    margin: 0px;
+    margin-bottom: 1em;
+    border: solid 1px;
+    border-color: black;
+    
+}
+
+/*buscar*/
+#buscar-input{
+    width: 100%;
+    
+}
+
+.btn-buscar{
+    float: right;
+    position: relative;
+    
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.valid-feedback{
+    color: black;
+}
+
+.custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid {
+    border-color: black;
+}
+
+/*footer*/
+footer{
+    height: 4em;
+    width: 100%;
+    background-color: black;
+    padding: 25px;
+    
+}
+
+/*btn anunciar*/
+.btn-anunciar{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.btn-limpar{
+    background-color: rgb(170, 32, 32);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+}
+
+/*btns*/
+.btn-editar{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+}
+
+
+/*quem somos*/
+.quem-somos-title{
+    font-weight: 600;
+}
+
+.area-text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.flex-item{
+    flex: 1 1 200px;
+    margin: 10px;
+    width: 50%;
+}
+
+.quem-somos-text{
+    text-align: justify;
+}
