@@ -44,8 +44,8 @@
                     <div class="form-group col-md-6">
                         <label for="">Tipo de Anuncio*</label>
                         <select id="" name="" class="form-control" required>
-                            <option selected>Alugar</option>
-                            <option>Vender</option>
+                            <option selected>Aluguel</option>
+                            <option>Venda</option>
                         </select>
                     </div>
                 </div>
