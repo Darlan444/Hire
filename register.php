@@ -2,7 +2,7 @@
 	require_once 'config/config.php';
 
 
-	// Define variáveis e inicialize com valores vazios
+	// Define variáveis e inicializa com valores vazios
 	$username = $password = $confirm_password = "";
 
 	$username_err = $password_err = $confirm_password_err = "";
@@ -72,7 +72,7 @@
 
 	    // Verifique o erro de entrada antes de inserir no banco de dados
 
-	    if (empty($username_err) && empty($password_err) && empty($confirm_err)) {
+	    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
 	    	
 			$sql = 'INSERT INTO users (username, password) VALUES (?,?)';

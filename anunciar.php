@@ -8,6 +8,19 @@
 	}
 ?>
 
+
+<?php 
+
+require_once 'config/config.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+
+}
+
+?>
+
 <?php include'includes/menudashboard.php';?>  
 
     <div class="container">
@@ -28,14 +41,14 @@
         <div class="alert alert-warning" role="alert">
             <h5><i data-feather="alert-triangle"></i></h5>
             <p><small>O "Tipo: Disponível" só poderá ser editado para indisponível depois que o imóvel for adquirido.</small></p>
-            <p><small>Fique atento ao número de telefone inserido, os usuários entrarão em contato por o número inserido.</small></p>
+            <p><small>Fique atento ao número de telefone inserido, os usuários entrarão em contato pelo número inserido.</small></p>
           </div>
         <br>
 
         <h5>Criar Anuncio</h5>
         <hr class="linha">
         
-        <form method="POST" action="">
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="">Proprietário*</label>
