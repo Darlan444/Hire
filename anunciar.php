@@ -13,11 +13,61 @@
 
 require_once 'config/config.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$proprietario = $cidade = $bairro = $rua =  $num = $cep = $foto_f = $tipo =
+$telefone = $whatsapp = $valor = $num_comodos = "";
+
+            $proprietario = trim($_POST['proprietario']);
+            $cidade = trim($_POST['cidade']);
+            $bairro = trim($_POST['bairro']);
+            $rua = trim($_POST['rua']);
+            $num = trim($_POST['num']);
+            $cep = trim($_POST['cep']);
+            $foto_f = trim($_POST['foto_f']);
+            $tipo = trim($_POST['tipo']);
+            $telefone = trim($_POST['telefone']);
+            $whatsapp = trim($_POST['whatsapp']);
+            $valor = trim($_POST['valor']);
+            $num_comodos = trim($_POST['num_comodos']);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $sql = 'INSERT INTO anuncio(proprietario, cidade, bairro,
+        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
+
+        if ($stmt = $mysql_db->prepare($sql)) {
+
+            $param_proprietario = $proprietario;
+            $param_cidade = $cidade;
+            $param_bairro = $bairro;
+            $param_rua = $rua;
+            $param_num = $num;
+            $param_cep = $cep;
+            $param_foto_f = $foto_f;
+            $param_tipo = $tipo;
+            $param_telefone = $telefone;
+            $param_whatsapp = $whatsapp;
+            $param_valor = $valor;
+            $param_num_comodos = $num_comodos;
 
 
+            $stmt->bind_param('ss',$proprietario , $cidade, $bairro, $rua, $num, $cep,
+            $foto_f, $tipo, $telefone, $whatsapp, $valor, $num_comodos);
 
-}
+            if ($stmt->execute()) {
+                // Redireciona
+                header('location: ./welcome.php');
+                
+            } else {
+                echo "Algo deu errado. Tente entrar de novo.";
+            }
+
+            
+            $stmt->close();
+
+        }
+        $mysql_db->close();
+
+    }
 
 ?>
 
@@ -51,12 +101,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">Proprietário*</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="Nome do Proprietário" required>
+                        <label for="proprietario">Proprietário*</label>
+                        <input type="text" class="form-control" id="proprietario" name="proprietario" placeholder="Nome do Proprietário" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="">Tipo de Anuncio*</label>
-                        <select id="" name="" class="form-control" required>
+                        <label for="tipo">Tipo de Anuncio*</label>
+                        <select id="tipo" name="tipo" class="form-control" required>
                             <option selected>Aluguel</option>
                             <option>Venda</option>
                         </select>
@@ -64,34 +114,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">Cidade*</label>
-                        <select id="" name="" class="form-control" required>
+                        <label for="cidade">Cidade*</label>
+                        <select id="cidade" name="cidade" class="form-control" required>
                             <option selected>Juazeiro do Norte - CE</option>
                             <option>Crato - CE</option>
                             <option>Barbalha - CE</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="">Endereço*</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="Rua..." required>
+                        <label for="endereco">Endereço*</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua..." required>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="">N°*</label>
-                        <input type="text" class="form-control" id="" name="" required>
+                        <label for="num">N°*</label>
+                        <input type="text" class="form-control" id="num" name="num" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">Bairro*</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="Bairro" required>
+                        <label for="bairro">Bairro*</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="">CEP*</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="00000000" required>
+                        <label for="cep">CEP*</label>
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000000" required>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="">Tipo</label>
-                        <select id="" name="" class="form-control" disabled>
+                        <label for="tipo_d">Tipo</label>
+                        <select id="tipo_d" name="tipo_d" class="form-control" disabled>
                             <option selected>Disponível</option>
                             <option>Indisponível</option>
                             
@@ -100,16 +150,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">Foto da Fachada*</label>
-                        <input type="file" class="form-control-file" id="" name="" required>
+                        <label for="foto_f">Foto da Fachada*</label>
+                        <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="">Telefone / Celular*</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="(00) 00000-0000" required>
+                        <label for="telefone">Telefone / Celular*</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="">Whatsapp</label>
-                        <input type="text" class="form-control" id="" name="" placeholder="(00) 00000-0000">
+                        <label for="whatsapp">Whatsapp</label>
+                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
                     </div>
                 </div>
 
@@ -118,12 +168,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="">Valor*</label>
-                        <input type="number" class="form-control" id="" name="" placeholder="Valor" required>
+                        <label for="valor">Valor*</label>
+                        <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="">Número de Cômodos*</label>
-                        <select id="" name="" class="form-control" required>
+                        <label for="num_comodos">Número de Cômodos*</label>
+                        <select id="num_comodos" name="num_comodos" class="form-control" required>
                             <option selected>3</option>
                             <option>4</option>
                             <option>5</option>
