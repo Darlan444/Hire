@@ -16,6 +16,15 @@ require_once 'config/config.php';
 $proprietario = $cidade = $bairro = $rua =  $num = $cep = $foto_f = $tipo =
 $telefone = $whatsapp = $valor = $num_comodos = "";
 
+            
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $sql = 'INSERT INTO anuncio(proprietario, cidade, bairro,
+        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
+
+        if ($stmt = $mysql_db->prepare($sql)) {
+
             $proprietario = trim($_POST['proprietario']);
             $cidade = trim($_POST['cidade']);
             $bairro = trim($_POST['bairro']);
@@ -28,13 +37,6 @@ $telefone = $whatsapp = $valor = $num_comodos = "";
             $whatsapp = trim($_POST['whatsapp']);
             $valor = trim($_POST['valor']);
             $num_comodos = trim($_POST['num_comodos']);
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $sql = 'INSERT INTO anuncio(proprietario, cidade, bairro,
-        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
-
-        if ($stmt = $mysql_db->prepare($sql)) {
 
             $param_proprietario = $proprietario;
             $param_cidade = $cidade;
