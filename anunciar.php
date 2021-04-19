@@ -52,8 +52,8 @@ $telefone = $whatsapp = $valor = $num_comodos = "";
             $param_num_comodos = $num_comodos;
 
 
-            $stmt->bind_param('ss',$proprietario , $cidade, $bairro, $rua, $num, $cep,
-            $foto_f, $tipo, $telefone, $whatsapp, $valor, $num_comodos);
+            $stmt->bind_param($param_proprietario , $param_cidade, $param_bairro, $param_rua, $param_num,
+            $param_cep, $param_foto_f, $param_tipo, $param_telefone, $param_whatsapp, $param_valor, $param_num_comodos);
 
             if ($stmt->execute()) {
                 // Redireciona
