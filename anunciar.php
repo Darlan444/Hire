@@ -124,8 +124,8 @@ $telefone = $whatsapp = $valor = $num_comodos = "";
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="endereco">Endereço*</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua..." required>
+                        <label for="rua">Endereço*</label>
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua..." required>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="num">N°*</label>
@@ -189,12 +189,12 @@ $telefone = $whatsapp = $valor = $num_comodos = "";
                     </div>
                 </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="">Fotos do Cômodo*</label>
                         <input type="file" class="form-control-file" id="" name="" required multiple> 
                     </div>
-                </div>
+                </div> -->
 
 
             <button type="submit" class="btn btn-anunciar">Anunciar</button>
