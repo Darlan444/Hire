@@ -9,69 +9,6 @@
 ?>
 
 
-<?php 
-
-require_once 'config/config.php';
-
-$proprietario = $cidade = $bairro = $rua =  $num = $cep = $foto_f = $tipo =
-$telefone = $whatsapp = $valor = $num_comodos = "";
-
-            
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $sql = 'INSERT INTO anuncio(proprietario, cidade, bairro,
-        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
-
-        if ($stmt = $mysql_db->prepare($sql)) {
-
-            $proprietario = trim($_POST['proprietario']);
-            $cidade = trim($_POST['cidade']);
-            $bairro = trim($_POST['bairro']);
-            $rua = trim($_POST['rua']);
-            $num = trim($_POST['num']);
-            $cep = trim($_POST['cep']);
-            $foto_f = trim($_POST['foto_f']);
-            $tipo = trim($_POST['tipo']);
-            $telefone = trim($_POST['telefone']);
-            $whatsapp = trim($_POST['whatsapp']);
-            $valor = trim($_POST['valor']);
-            $num_comodos = trim($_POST['num_comodos']);
-
-            $param_proprietario = $proprietario;
-            $param_cidade = $cidade;
-            $param_bairro = $bairro;
-            $param_rua = $rua;
-            $param_num = $num;
-            $param_cep = $cep;
-            $param_foto_f = $foto_f;
-            $param_tipo = $tipo;
-            $param_telefone = $telefone;
-            $param_whatsapp = $whatsapp;
-            $param_valor = $valor;
-            $param_num_comodos = $num_comodos;
-
-
-            $stmt->bind_param($param_proprietario , $param_cidade, $param_bairro, $param_rua, $param_num,
-            $param_cep, $param_foto_f, $param_tipo, $param_telefone, $param_whatsapp, $param_valor, $param_num_comodos);
-
-            if ($stmt->execute()) {
-                // Redireciona
-                header('location: ./welcome.php');
-                
-            } else {
-                echo "Algo deu errado. Tente entrar de novo.";
-            }
-
-            
-            $stmt->close();
-
-        }
-        $mysql_db->close();
-
-    }
-
-?>
 
 <?php include'includes/menudashboard.php';?>  
 
@@ -100,7 +37,7 @@ $telefone = $whatsapp = $valor = $num_comodos = "";
         <h5>Criar Anuncio</h5>
         <hr class="linha">
         
-        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <form method="POST" action="cad_anuncio.php">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="proprietario">Proprietário*</label>
