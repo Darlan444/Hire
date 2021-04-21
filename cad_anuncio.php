@@ -33,10 +33,8 @@ require_once 'config/config.php';
 
         $new_sql = mysqli_query($mysql_db, $sql);
         
-        if (mysqli_affected_rows($mysql_db) != 0 ) {
-            echo "Anúncio realizado com sucesso";
+        if (mysqli_affected_rows($mysql_db) != 0 ) {  
             header('location: index.php');
-
         } else {
             echo "Não foi possivel cadastrar";
         }
