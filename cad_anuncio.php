@@ -29,11 +29,12 @@ require_once 'config/config.php';
 
         $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
         rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES ('$proprietario','$cidade',
-        $bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' )";
+        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' )";
 
         $new_sql = mysqli_query($mysql_db, $sql);
+        
         if (mysqli_affected_rows($mysql_db) != 0 ) {
-
+            echo "Anúncio realizado com sucesso";
             header('location: index.php');
 
         } else {
