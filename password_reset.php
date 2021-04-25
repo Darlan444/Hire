@@ -1,24 +1,23 @@
 <?php
-// Initialize the session
+// Verificação de login
 session_start();
  
-// Check if the user is logged in, if not then redirect to login page
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
     header('location: index.php');
     exit;
 }
  
-// Include config file
+// Chama conexão bd
 require_once 'config/config.php';
  
-// Define variables and initialize with empty values
+// Define variaveis e inicializa com valores vazios
 $new_password = $confirm_password = '';
 $new_password_err = $confirm_password_err = '';
  
-// Processing form data when form is submitted
+// Pega dados de forms
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
  
-    // Validate new password
+    // Valida nova senha
     if(empty(trim($_POST['new_password']))){
         $new_password_err = 'Por favor, digite a nova senha.';     
     } elseif(strlen(trim($_POST['new_password'])) < 6){
@@ -27,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $new_password = trim($_POST['new_password']);
     }
     
-    // Validate confirm password
+    // Valida conf. de senha
     if(empty(trim($_POST['confirm_password']))){
         $confirm_password_err = 'Por favor, confirme a senha.';
     } else{
@@ -37,23 +36,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
     }
         
-    // Check input errors before updating the database
+    // Verifica erros de entrada
     if(empty($new_password_err) && empty($confirm_password_err)){
-        // Prepare an update statement
+        // Realiza o Update
         $sql = 'UPDATE users SET password = ? WHERE id = ?';
         
         if($stmt = $mysql_db->prepare($sql)){
-            // Set parameters
+            // Parâmetros
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
             $param_id = $_SESSION["id"];
 
-            // Bind variables to the prepared statement as parameters
             $stmt->bind_param("si", $param_password, $param_id);
             
-            
-            // Attempt to execute the prepared statement
+            // Executa
             if($stmt->execute()){
-                // Password updated successfully. Destroy the session, and redirect to login page
+                // Finaliza seção e redireciona
                 session_destroy();
                 header("location: index.php");
                 exit();
@@ -61,11 +58,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 echo "Oops! Something went wrong. Please try again later.";
             }
 
-            // Close statement
             $stmt->close();
         }
 
-        // Close connection
         $mysql_db->close();
     }
 }

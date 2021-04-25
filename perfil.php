@@ -1,5 +1,5 @@
 <?php
-	// Initialize session
+  // Verificação de login
 	session_start();
 
 	if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {

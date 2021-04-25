@@ -1,5 +1,5 @@
 <?php
-	// Initialize session
+	// Verificação de login
 	session_start();
 
 	if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
@@ -14,7 +14,7 @@
         
         <!--
         
-        NÃO USAR ESTE CÓDIGO!!
+        Código não usado!
 
         <div class="grupo_lista">
           <h6>Anuncie ou Procure Casas! 😀</h6>
@@ -99,7 +99,7 @@
         
         <br>
 
-    </div><!--container-->
+    </div>
 
     <footer>
         <div class="container">

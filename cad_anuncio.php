@@ -12,7 +12,7 @@
 <?php 
 
 require_once 'config/config.php';
-
+        // Pega dados do form
         $proprietario = $_POST['proprietario'];
         $cidade = $_POST['cidade'];
         $bairro = $_POST['bairro'];
@@ -26,14 +26,15 @@ require_once 'config/config.php';
         $valor = $_POST['valor'];
         $num_comodos = $_POST['num_comodos'];     
 
-
+        // Inserir dados no banco
         $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
         rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos) VALUES ('$proprietario','$cidade',
         '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' )";
 
         $new_sql = mysqli_query($mysql_db, $sql);
         
-        if (mysqli_affected_rows($mysql_db) != 0 ) {  
+        // Redireciona se feito o anuúncio
+        if (mysqli_affected_rows($mysql_db) != 0 ) { 
             header('location: index.php');
         } else {
             echo "Não foi possivel cadastrar";

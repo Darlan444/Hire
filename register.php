@@ -7,7 +7,7 @@
 
 	$username_err = $password_err = $confirm_password_err = "";
 
-	// Dados de formulários submetidos ao processo
+	// Pega Dados de formulários
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 		// Verifica se o nome de usuário está vazio
@@ -70,7 +70,7 @@
 	        }
 	    }
 
-	    // Verifique o erro de entrada antes de inserir no banco de dados
+	    // Verifica se tem erro de entrada antes de inserir no banco de dados
 
 	    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
@@ -81,7 +81,7 @@
 
 				
 				$param_username = $username;
-				$param_password = password_hash($password, PASSWORD_DEFAULT); // Created a password
+				$param_password = password_hash($password, PASSWORD_DEFAULT); // Senha cripto
 
 				
 				$stmt->bind_param('ss', $param_username, $param_password);

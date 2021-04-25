@@ -1,13 +1,13 @@
 <?php
-	// Start sessions
+	// Inicia seção
 	session_start();
 
 	$_SESSION  = array();
 
-	// Destroy all session related to user
+	// Apaga toda a seção relacionada ao user 
 	session_destroy();
 
-	// Redirect to login page
+	// Redireciona para login
 	header('location: index.php');
 	exit;
 ?>
