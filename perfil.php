@@ -23,7 +23,6 @@
                     <img src="img/perfil.jpg" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4><?php echo $_SESSION['username']; ?><img src="img/check.svg" alt="" class="verificado" width="15" style="margin-bottom: 20px;"></h4>
-                      <p class="text-secondary mb-1">Anunciante</p>
                       <p class="text-muted font-size-sm">Juazeiro do Norte - CE, Salesianos</p>
                     </div>
                   </div>
