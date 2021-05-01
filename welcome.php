@@ -52,7 +52,7 @@
                     <div class="salvar_icon"><i data-feather="heart"></i></div>
                     <h5 class="card-title">Aluguel</h5>
                     <p>R$ 750,00</p>
-                    <small id="proprietario">Proprietário: Marcos Heiner</small>
+                    <small id="proprietario">Proprietário: <?php echo $_SESSION['username']; ?></small>
                     <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
                     <p class="card-text"><small class="text-muted">3 de mar</small></p>
                     <a href="#" class="btn btn-card">Saiba Mais</a>

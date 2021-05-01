@@ -108,7 +108,7 @@
 <?php include'includes/menuhome.php';?>
 	<main>
 		<section class="">
-			
+
         	<form class="form-signin" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
 				<br>
@@ -130,10 +130,42 @@
         			<span class="help-block"><?php echo $confirm_password_err;?></span>
         		</div>
 
-        		<div class="form-group">
+        		<p style="text-align:center;">Informações Pessoais</p><br>
+				
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<input type="text" name="Nome" id="Nome" class="form-control" placeholder="Nome" value="">
+						<span class="help-block"><?php echo $username_err;?></span>
+					</div>
+					<div class="form-group col-md-6">
+						<input type="text" name="Sobrenome" id="Sobrenome" class="form-control" placeholder="Sobrenome" value="">
+						<span class="help-block"><?php echo $username_err;?></span>
+					</div>
+				</div>
+
+				<div class="form-group ">
+					<input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required>
+				</div>
+
+				<!- Máscaras -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+				
+				<div class="form-group">
+					<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autocomplete="off">
+				<script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
+				</div>
+				
+				<div class="form-group">
+					<input type="text" class="form-control" name="data_nasc" id="data_nasc" placeholder="Data de Nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" autocomplete="off">
+					<script type="text/javascript">$("#data_nasc").mask("00/00/0000");</script>
+				</div>
+				
+
+				<div class="form-group">
         			<input type="submit" class="btn btn-lg btn-login btn-block" value="Cadastrar">
         		</div>
-        		<p>Já tem conta? Entre agora! <a href="index.php">Login Aqui</a>.</p>
+        		<p style="text-align:center;">Já tem conta? Entre agora! <a href="index.php">Login Aqui</a>.</p>
         	</form>
 		</section>
 	</main>
