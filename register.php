@@ -153,7 +153,7 @@
 				
 				<div class="form-group">
 					<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autocomplete="off">
-				<script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
+					<script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
 				</div>
 				
 				<div class="form-group">

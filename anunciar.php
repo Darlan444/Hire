@@ -38,6 +38,12 @@
         <hr class="linha">
         
         <form method="POST" action="cad_anuncio.php">
+
+                    <!- Máscaras -->
+				    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+				    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+				
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="proprietario">Proprietário*</label>
@@ -76,7 +82,8 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="cep">CEP*</label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000000" required>
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
+                        <script type="text/javascript">$("#cep").mask("00000-000");</script>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="tipo_d">Tipo</label>
@@ -92,13 +99,17 @@
                         <label for="foto_f">Foto da Fachada*</label>
                         <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
                     </div>
+
+                    
                     <div class="form-group col-md-4">
                         <label for="telefone">Telefone / Celular*</label>
                         <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                        <script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="whatsapp">Whatsapp</label>
                         <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
+                        <script type="text/javascript">$("#whatsapp").mask("(00) 90000-0000");</script>
                     </div>
                 </div>
 
@@ -108,7 +119,8 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="valor">Valor*</label>
-                        <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor" required>
+                        <input type="text" class="form-control" id="valor" name="valor" placeholder="Valor" required>
+                        <script type="text/javascript">$("#valor").mask("R$ 999.990,00", {reverse: true});</script>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="num_comodos">Número de Cômodos*</label>
