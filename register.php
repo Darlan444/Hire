@@ -3,7 +3,7 @@
 
 
 	// Define variáveis e inicializa com valores vazios
-	$username = $password = $confirm_password = "";
+	$username = $password = $nome = $sobrenome = $email = $telefone = $data_nasc = $confirm_password = "" ;
 
 	$username_err = $password_err = $confirm_password_err = "";
 
@@ -75,16 +75,15 @@
 	    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
 	    	
-			$sql = 'INSERT INTO users (username, password) VALUES (?,?)';
+			$sql = 'INSERT INTO users (username, password, nome, sobrenome, email, telefone, data_nasc) VALUES (?,?,?,?,?,?,?)';
 
 			if ($stmt = $mysql_db->prepare($sql)) {
 
 				
 				$param_username = $username;
 				$param_password = password_hash($password, PASSWORD_DEFAULT); // Senha cripto
-
 				
-				$stmt->bind_param('ss', $param_username, $param_password);
+				$stmt->bind_param('ss',$param_username,$param_password);
 
 				
 				if ($stmt->execute()) {
@@ -134,11 +133,11 @@
 				
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<input type="text" name="Nome" id="Nome" class="form-control" placeholder="Nome" value="">
+						<input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" value="" required>
 						<span class="help-block"><?php echo $username_err;?></span>
 					</div>
 					<div class="form-group col-md-6">
-						<input type="text" name="Sobrenome" id="Sobrenome" class="form-control" placeholder="Sobrenome" value="">
+						<input type="text" name="sobrenome" id="sobrenome" class="form-control" placeholder="Sobrenome" value="" required>
 						<span class="help-block"><?php echo $username_err;?></span>
 					</div>
 				</div>
@@ -152,12 +151,12 @@
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 				
 				<div class="form-group">
-					<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autocomplete="off">
+					<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}" autocomplete="off" required>
 					<script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
 				</div>
 				
 				<div class="form-group">
-					<input type="text" class="form-control" name="data_nasc" id="data_nasc" placeholder="Data de Nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" autocomplete="off">
+					<input type="text" class="form-control" name="data_nasc" id="data_nasc" placeholder="Data de Nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" autocomplete="off" required>
 					<script type="text/javascript">$("#data_nasc").mask("00/00/0000");</script>
 				</div>
 				
