@@ -41,7 +41,7 @@
 
 
         <br>
-        <h5>Anunciados Recentementes</h5>
+        <h5>Anúncios</h5>
         <hr class="linha">
         
         <div class="row" id="row_cards">
@@ -102,8 +102,8 @@
     </div>
 
     <footer>
-        <div class="container" style="padding-bottom: 0px; ">
-          <p style="color: aliceblue; text-align:center;">Hire</p>
+        <div class="container">
+          <p style="color: aliceblue;">Hire</p>
         </div>
     </footer>
 
