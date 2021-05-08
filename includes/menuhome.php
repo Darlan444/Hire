@@ -15,5 +15,5 @@
     
     <!--barra topo-->
     <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="">Hire.</a>
+        <a class="navbar-brand" href="">Hire</a>
     </nav>

@@ -102,8 +102,8 @@
     </div>
 
     <footer>
-        <div class="container">
-          <p style="color: aliceblue;">Hire.</p>
+        <div class="container" style="padding-bottom: 0px; ">
+          <p style="color: aliceblue; text-align:center;">Hire</p>
         </div>
     </footer>
 

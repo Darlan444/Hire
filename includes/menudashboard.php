@@ -29,12 +29,13 @@
           <li class="nav-item" id="">
             <a class="nav-link" href="">Meus Anuncios</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perfil.php">Perfil</a>
+          </li>
           <li class="nav-item" id="">
             <a class="nav-link" href="logout.php">Sair</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="perfil.php"><img src="img/perfil.jpg" alt="..." class="rounded-circle" width="30" height="30"></a>
-          </li>
+          
         </ul>
       </div>
     </nav>
