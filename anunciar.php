@@ -30,7 +30,7 @@
         <div class="alert alert-warning" role="alert">
             <h5><i data-feather="alert-triangle"></i></h5>
             <p><small>O "Tipo: Disponível" só poderá ser editado para indisponível depois que o imóvel for adquirido.</small></p>
-            <p><small>Fique atento ao número de telefone inserido, os usuários entrarão em contato pelo número inserido.</small></p>
+            <p><small>Fique atento ao número de telefone inserido, pois os usuários entrarão em contato pelo número inserido.</small></p>
           </div>
         <br>
 
@@ -158,7 +158,7 @@
 
     <footer>
         <div class="container">
-          <p style="color: aliceblue;">Hire.</p>
+          <p style="color: aliceblue;">Hire</p>
         </div>
     </footer>
 

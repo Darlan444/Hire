@@ -33,7 +33,7 @@
             <a class="nav-link" href="perfil.php">Perfil</a>
           </li>
           <li class="nav-item" id="">
-            <a class="nav-link" href="logout.php">Sair</a>
+            <a class="nav-link" href="logout.php"><img src="img/iconsair.png" alt="" width="20"> Sair</a>
           </li>
           
         </ul>

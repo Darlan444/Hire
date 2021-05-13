@@ -10,7 +10,7 @@
   require_once "config/config.php";
 
   // Define variaveis e inicializa com valores vazios
-  $username = $password = '';
+  $username = $password = $email = '';
   $username_err = $password_err = '';
 
   // Pega dados dos form

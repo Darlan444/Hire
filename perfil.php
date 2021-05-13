@@ -10,6 +10,10 @@
 
 <?php include'includes/menudashboard.php';?>
 
+<?php 
+  $dadosuser[] = 'SELECT * FROM users';
+?>
+
 <div class="container">
     <div class="main-body">
 
@@ -46,7 +50,9 @@
                       <h6 class="mb-0">E-mail</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      marcosheiner2000@gmail.com
+                      <?php 
+                        echo $dadosuser['email'];
+                      ?>
                     </div>
                   </div>
                   <hr>
@@ -55,7 +61,7 @@
                       <h6 class="mb-0">Telefone / Celular</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      <?php echo $_SESSION['telefone']; ?>
                     </div>
                   </div>
                   <hr>
@@ -71,7 +77,6 @@
               </div>
               <div>
                 <button class="btn btn-editar">Editar</button>
-                <button class="btn btn-editar">Meus Anuncios</button>
                 <a href="password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
               </div>
             </div>
