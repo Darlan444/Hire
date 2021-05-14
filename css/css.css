@@ -79,6 +79,21 @@ body{
     color: rgb(0, 0, 0);
 }
 
+/* Perfil */
+#campoperfil{
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 3%;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #f0e8e8;
+    -moz-box-shadow: 1px 1px 2px #f0e8e8;
+    -webkit-box-shadow: 1px 1px 2px #f0e8e8;
+    background: #cccccc;
+    border:1px solid #000000;
+    width:150px;
+}
+
 /*quem somos*/
 .lista_quem_somos{
     list-style-type: none;
