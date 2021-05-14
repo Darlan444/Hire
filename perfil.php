@@ -12,6 +12,7 @@
 
 <?php 
   $dadosuser[] = 'SELECT * FROM users';
+
 ?>
 
 <div class="container">
@@ -19,7 +20,7 @@
 
         <br>
 
-          <div class="row gutters-sm">
+          <!-- <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
@@ -32,16 +33,16 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-8">
+            </div> -->
+            <div class="col-md-12">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Nome</h6>
+                      <h6 class="mb-0">Username</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['username']; ?>
+                      <input type="text" name="campoperfil" id="campoperfil" value="<?php echo $_SESSION['username']; ?>" disabled/>
                     </div>
                   </div>
                   <hr>

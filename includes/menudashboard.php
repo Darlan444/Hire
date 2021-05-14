@@ -17,7 +17,7 @@
     
     <!--barra topo-->
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="welcome.php"><img src="img/logohireonlyhousewhite.svg" alt="" width="30"></a>
+      <a class="navbar-brand" href="welcome.php"><img src="img/logohireonlyhousewhite.svg" alt="" width="30">  HIRE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
