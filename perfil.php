@@ -11,13 +11,16 @@
 <?php include'includes/menudashboard.php';?>
 <?php include'config/config.php';?>
 
+
 <?php 
+  // Mostrar infos do perfil
 
   $id = $_SESSION['id'];
 
   $mysqli = new mysqli("localhost", "root", "", "hirev2");
   $dadosperfil = "SELECT * FROM users WHERE id = '$id'";
   $result = $mysql_db->query($dadosperfil);
+
 ?>
 
 <div class="container">

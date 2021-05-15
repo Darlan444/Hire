@@ -75,7 +75,7 @@
 	    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
 	    	
-			$sql = 'INSERT INTO users (username, password, nome, sobrenome, email, telefone, data_nasc) VALUES (?,?,?,?,?,?,?)';
+			$sql = 'INSERT INTO users (username, password) VALUES (?,?)';
 
 			if ($stmt = $mysql_db->prepare($sql)) {
 
@@ -129,7 +129,7 @@
         			<span class="help-block"><?php echo $confirm_password_err;?></span>
         		</div>
 
-        		<p style="text-align:center;">Informações Pessoais</p><br>
+        		<!-- <p style="text-align:center;">Informações Pessoais</p><br>
 				
 				<div class="form-row">
 					<div class="form-group col-md-6">
@@ -147,18 +147,22 @@
 				</div>
 
 				<!- Máscaras -->
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+				<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 				
 				<div class="form-group">
 					<input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4}" autocomplete="off" required>
 					<script type="text/javascript">$("#telefone").mask("(00) 90000-0000");</script>
+				</div> -->
+
+				<div  class="form-group">
+					<input type="checkbox" required> Tenho mais que 18 anos</input>
 				</div>
 				
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<input type="text" class="form-control" name="data_nasc" id="data_nasc" placeholder="Data de Nascimento" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" autocomplete="off" required>
 					<script type="text/javascript">$("#data_nasc").mask("00/00/0000");</script>
-				</div>
+				</div> -->
 				
 
 				<div class="form-group">
