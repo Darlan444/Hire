@@ -26,7 +26,8 @@
 <div class="container">
     <div class="main-body">
 
-        <br>
+        <br><br>
+        <p id="p_perfil">Perfil</p>
 
           <!-- <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
@@ -42,7 +43,7 @@
                 </div>
               </div>
             </div> -->
-            <div class="col-md-12">
+            <div class="form-signin text-center">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
@@ -72,20 +73,11 @@
                       <h6 class="mb-0">Telefone / Celular</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php 
-                        while ($row = $result->fetch_row()) {
-                          printf ("%s\n", $row[6]);
-                        }
-                      ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Endereço</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      Rua Possidônio Bem, 326, Salesianos
+                    <?php 
+                      while ($row = $result->fetch_row()) {
+                        printf ("%s\n", $row[7]);
+                      }
+                    ?>
                     </div>
                   </div>
                 </div>

@@ -94,6 +94,17 @@ body{
     width:150px;
 }
 
+#p_perfil{
+    text-align: center;
+    color: #000000;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    margin: 10px;
+    text-shadow: #151515;
+    font-weight: bolder;
+}
+
 /*quem somos*/
 .lista_quem_somos{
     list-style-type: none;
@@ -248,8 +259,12 @@ footer{
     border-radius: 10px;
     width: 150px;
     text-align: center;
-}
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
 
+}
 
 /*quem somos*/
 .quem-somos-title{

@@ -156,7 +156,7 @@
 				</div> -->
 
 				<div  class="form-group">
-					<input type="checkbox" required> Tenho mais que 18 anos</input>
+					<input type="checkbox" required> Tenho mais que 18 anos
 				</div>
 				
 				<!-- <div class="form-group">
