@@ -9,10 +9,15 @@
 ?>
 
 <?php include'includes/menudashboard.php';?>
+<?php include'config/config.php';?>
 
 <?php 
-  $dadosuser[] = 'SELECT * FROM users';
 
+  $id = $_SESSION['id'];
+
+  $mysqli = new mysqli("localhost", "root", "", "hirev2");
+  $dadosperfil = "SELECT * FROM users WHERE id = '$id'";
+  $result = $mysql_db->query($dadosperfil);
 ?>
 
 <div class="container">
@@ -42,7 +47,7 @@
                       <h6 class="mb-0">Username</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <input type="text" name="campoperfil" id="campoperfil" value="<?php echo $_SESSION['username']; ?>" disabled/>
+                      <?php echo $_SESSION['username']; ?>
                     </div>
                   </div>
                   <hr>
@@ -51,9 +56,11 @@
                       <h6 class="mb-0">E-mail</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php 
-                        echo $dadosuser['email'];
-                      ?>
+                    <?php 
+                      while ($row = $result->fetch_row()) {
+                        printf ("%s\n", $row[6]);
+                      }
+                    ?>
                     </div>
                   </div>
                   <hr>
@@ -62,7 +69,11 @@
                       <h6 class="mb-0">Telefone / Celular</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['telefone']; ?>
+                      <?php 
+                        while ($row = $result->fetch_row()) {
+                          printf ("%s\n", $row[6]);
+                        }
+                      ?>
                     </div>
                   </div>
                   <hr>
