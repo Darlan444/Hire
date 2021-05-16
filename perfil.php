@@ -12,11 +12,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 <?php include 'config/config.php'; ?>
 
 
-<?php
-// Mostrar infos do perfil
-
-
-?>
 
 <div class="container">
   <div class="main-body">
@@ -137,7 +132,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
         </div>
       </div>
       <div>
-        <button class="btn btn-editar">Editar</button>
+        <a href="editar_perfil.php"><button class="btn btn-editar">Editar</button></a>
         <a href="password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
       </div>
     </div>

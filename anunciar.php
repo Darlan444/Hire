@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <h5>Criar Anuncio</h5>
     <hr class="linha">
 
-    <form method="POST" action="cad_anuncio.php" enctype="multipart/form-data">
+    <form method="POST" action="cad_anuncio.php">
 
         <!- Máscaras -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
