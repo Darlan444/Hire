@@ -1,18 +1,18 @@
 <?php
-	// Verificação de login
-	session_start();
+// Verificação de login
+session_start();
 
-	if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-		header('location: index.php');
-		exit;
-	}
+if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
+  header('location: index.php');
+  exit;
+}
 ?>
-<?php include'includes/menudashboard.php';?>
-    
+<?php include 'includes/menudashboard.php'; ?>
 
-    <div class="container">
-        
-        <!--
+
+<div class="container">
+
+  <!--
         
         Código não usado!
 
@@ -26,85 +26,85 @@
         </div>
         -->
 
-        <br>
+  <br>
 
-        <h5>Buscar</h5>
-        <hr class="linha">
-        <form action="" class="form-group">
-          <input type="text" class="form-control is-valid" placeholder="Buscar" id="buscar-input">
-          <div class="valid-feedback">
-            Procure por Cidade, Bairro ou Rua!
-          </div>
-          <button class="btn btn-buscar">Buscar</button>
+  <h5>Buscar</h5>
+  <hr class="linha">
+  <form action="" class="form-group">
+    <input type="text" class="form-control is-valid" placeholder="Buscar" id="buscar-input">
+    <div class="valid-feedback">
+      Procure por Cidade, Bairro ou Rua!
+    </div>
+    <button class="btn btn-buscar">Buscar</button>
 
-        </form>
+  </form>
 
 
-        <br>
-        <h5>Anúncios</h5>
-        <hr class="linha">
-        
-        <div class="row" id="row_cards">
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <div class="salvar_icon"><i data-feather="heart"></i></div>
-                    <h5 class="card-title">Aluguel</h5>
-                    <p>R$ 750,00</p>
-                    <small id="proprietario">Proprietário: <?php echo $_SESSION['username']; ?></small>
-                    <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
-                    <p class="card-text"><small class="text-muted">3 de mar</small></p>
-                    <a href="#" class="btn btn-card">Saiba Mais</a>
-                </div>
-            </div>
-          </div>
+  <br>
+  <h5>Anúncios</h5>
+  <hr class="linha">
 
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="img/img2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <div class="salvar_icon"><i data-feather="heart"></i></div>
-                    <h5 class="card-title">Aluguel</h5>
-                    <p>R$ 680,00</p>
-                    <small id="proprietario">Proprietário: Juvenal Rodrigues</small>
-                    <p class="card-text text-justify"><span class="badge badge-danger">Indisponível</span></p>
-                    <p class="card-text"><small class="text-muted">1 de mar</small></p>
-                    <a href="#" class="btn btn-card">Saiba Mais</a>
-                </div>
-            </div>
-          </div>
-
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="img/img3.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <div class="salvar_icon"><i data-feather="heart"></i></div>
-                    <h5 class="card-title">Venda</h5>
-                    <p>R$ 1.550,00</p>
-                    <small id="proprietario">Proprietário: Marco Moreira</small>
-                    <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
-                    <p class="card-text"><small class="text-muted">28 de fev</small></p>
-                    <a href="#" class="btn btn-card">Saiba Mais</a>
-                </div>
-            </div>
-          </div>
+  <div class="row" id="row_cards">
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <div class="salvar_icon"><i data-feather="heart"></i></div>
+          <h5 class="card-title">Aluguel</h5>
+          <p>R$ 750,00</p>
+          <small id="proprietario">Proprietário: <?php echo $_SESSION['username']; ?></small>
+          <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
+          <p class="card-text"><small class="text-muted">3 de mar</small></p>
+          <a href="#" class="btn btn-card">Saiba Mais</a>
         </div>
-
-        <br>
-        
-        <div class="text-center">
-          <a href="">Veja todos os anuncios</a>
-        </div>
-        
-        <br>
-
+      </div>
     </div>
 
-    <footer>
-        <div class="container">
-          <p style="color: aliceblue;">Hire</p>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/img2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <div class="salvar_icon"><i data-feather="heart"></i></div>
+          <h5 class="card-title">Aluguel</h5>
+          <p>R$ 680,00</p>
+          <small id="proprietario">Proprietário: Juvenal Rodrigues</small>
+          <p class="card-text text-justify"><span class="badge badge-danger">Indisponível</span></p>
+          <p class="card-text"><small class="text-muted">1 de mar</small></p>
+          <a href="#" class="btn btn-card">Saiba Mais</a>
         </div>
-    </footer>
+      </div>
+    </div>
 
-<?php include'includes/footerdashboard.php';?>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/img3.jpg" alt="Card image cap">
+        <div class="card-body">
+          <div class="salvar_icon"><i data-feather="heart"></i></div>
+          <h5 class="card-title">Venda</h5>
+          <p>R$ 1.550,00</p>
+          <small id="proprietario">Proprietário: Marco Moreira</small>
+          <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
+          <p class="card-text"><small class="text-muted">28 de fev</small></p>
+          <a href="#" class="btn btn-card">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <a href="">Veja todos os anuncios</a>
+  </div>
+
+  <br>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p style="color: aliceblue;">Hire</p>
+  </div>
+</footer>
+
+<?php include 'includes/footerdashboard.php'; ?>
