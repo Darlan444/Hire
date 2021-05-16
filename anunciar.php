@@ -10,7 +10,11 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 
-<?php include 'includes/menudashboard.php'; ?>
+<?php
+ include 'includes/menudashboard.php'; 
+
+
+?>
 
 <div class="container">
 
@@ -37,7 +41,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <h5>Criar Anuncio</h5>
     <hr class="linha">
 
-    <form method="POST" action="cad_anuncio.php">
+    <form method="POST" action="cad_anuncio.php" enctype="multipart/form-data">
 
         <!- Máscaras -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -101,6 +105,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                     <label for="foto_f">Foto da Fachada*</label>
                     <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
                 </div>
+
 
 
                 <div class="form-group col-md-4">
