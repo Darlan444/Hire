@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">E-mail</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" width="30" name="newemail" id="newemail" required>
+                                <input type="text" width="30" class="form-control" name="newemail" id="newemail" required>
                             </div>
                         </div>
                         <hr>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">Nome</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" width="30" name="newnome" id="newnome" required>
+                                <input type="text" class="form-control" width="30" name="newnome" id="newnome" required>
                             </div>
                         </div>
                         <hr>
@@ -58,7 +58,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">Sobrenome</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" width="30" name="newsobrenome" id="newsobrenome" required>
+                                <input type="text" class="form-control"  width="30" name="newsobrenome" id="newsobrenome" required>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                             <div class="col-sm-8 text-secondary">
                                 <input type="text" class="form-control" id="newtelefone" name="newtelefone" placeholder="(00) 00000-0000" required>
                                 <script type="text/javascript">
-                                    $("#telefone").mask("(00) 90000-0000");
+                                    $("#newtelefone").mask("(00) 90000-0000");
                                 </script>
                             </div>
                         </div>
