@@ -40,7 +40,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">E-mail</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" width="30" class="form-control" name="newemail" id="newemail" required>
+                                <input type="text" width="30" class="form-control" name="newemail" id="newemail" value="<?php
+
+                                $id = $_SESSION['id'];
+
+                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                                $emailperfil = "SELECT email FROM users WHERE id = '$id'";
+                                $result = $mysql_db->query($emailperfil);
+
+
+                                while ($row = $result->fetch_row()) {
+                                printf("%s\n", $row[0]);
+                                }
+                                ?>"  required>
                             </div>
                         </div>
                         <hr>
@@ -49,7 +61,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">Nome</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" class="form-control" width="30" name="newnome" id="newnome" required>
+                                <input type="text" class="form-control" width="30" name="newnome" id="newnome" value="<?php
+
+                                $id = $_SESSION['id'];
+
+                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                                $nomeperfil = "SELECT nome FROM users WHERE id = '$id'";
+                                $result = $mysql_db->query($nomeperfil);
+
+
+                                while ($row = $result->fetch_row()) {
+                                printf("%s\n", $row[0]);
+                                }
+                                ?>" required>
                             </div>
                         </div>
                         <hr>
@@ -58,7 +82,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">Sobrenome</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" class="form-control"  width="30" name="newsobrenome" id="newsobrenome" required>
+                                <input type="text" class="form-control"  width="30" name="newsobrenome" id="newsobrenome" value="<?php
+
+                                $id = $_SESSION['id'];
+
+                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                                $sobrenomeperfil = "SELECT sobrenome FROM users WHERE id = '$id'";
+                                $result = $mysql_db->query($sobrenomeperfil);
+
+
+                                while ($row = $result->fetch_row()) {
+                                printf("%s\n", $row[0]);
+                                }
+                                ?>" required>
                             </div>
                         </div>
 
@@ -68,7 +104,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">Telefone / Celular</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" class="form-control" id="newtelefone" name="newtelefone" placeholder="(00) 00000-0000" required>
+                                <input type="text" class="form-control" id="newtelefone" name="newtelefone" placeholder="(00) 00000-0000" value="<?php
+
+                                $id = $_SESSION['id'];
+
+                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                                $telefoneperfil = "SELECT telefone FROM users WHERE id = '$id'";
+                                $result = $mysql_db->query($telefoneperfil);
+
+
+                                while ($row = $result->fetch_row()) {
+                                printf("%s\n", $row[0]);
+                                }
+                                ?>" required>
                                 <script type="text/javascript">
                                     $("#newtelefone").mask("(00) 90000-0000");
                                 </script>
