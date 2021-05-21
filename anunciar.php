@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <h5>Criar Anuncio</h5>
     <hr class="linha">
 
-    <form method="POST" action="cad_anuncio.php">
+    <form method="POST" action="cad_anuncio.php" >
 
         <!- Máscaras -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -161,7 +161,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                 </div> -->
 
 
-            <button type="submit" class="btn btn-anunciar">Anunciar</button>
+            <button type="submit" class="btn btn-anunciar" onclick="return confirm('Tem certeza que deseja criar Anúncio?')">Anunciar</button>
             <button type="reset" class="btn btn-limpar">Limpar</button>
     </form>
 

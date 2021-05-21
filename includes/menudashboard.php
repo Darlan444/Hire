@@ -27,7 +27,7 @@
             <a class="nav-link" href="anunciar.php">Anunciar</a>
           </li>
           <li class="nav-item" id="">
-            <a class="nav-link" href="">Meus Anuncios</a>
+            <a class="nav-link" href="meusanuncios.php">Meus Anuncios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="perfil.php">Perfil</a>

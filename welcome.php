@@ -7,7 +7,10 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
   exit;
 }
 ?>
-<?php include 'includes/menudashboard.php'; ?>
+<?php
+include 'includes/menudashboard.php';
+include 'config/config.php';
+?>
 
 
 <div class="container">
@@ -44,60 +47,78 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
   <h5>Anúncios</h5>
   <hr class="linha">
 
+
   <div class="row" id="row_cards">
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <div class="salvar_icon"><i data-feather="heart"></i></div>
-          <h5 class="card-title">Aluguel</h5>
-          <p>R$ 750,00</p>
-          <small id="proprietario">Proprietário: <?php echo $_SESSION['username']; ?></small>
-          <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
-          <p class="card-text"><small class="text-muted">3 de mar</small></p>
-          <a href="#" class="btn btn-card">Saiba Mais</a>
-        </div>
+  <?php
+  // Comando para selecionar anuncios
+  $sql_anuncio = 'SELECT * FROM anuncio';
+
+  // executa querry e define arrays para armazenar infos
+  if ($res = mysqli_query($mysql_db, $sql_anuncio)) {
+    $id_anuncio = array();
+    $proprietario = array();
+    $cidade = array();
+    $bairro = array();
+    $rua = array();
+    $num = array();
+    $cep = array();
+    $foto_f = array();
+    $tipo = array();
+    $telefone = array();
+    $whatsapp = array();
+    $valor = array();
+    $num_comodos = array();
+    $id_anunciante = array();
+    $i = 0;
+
+    // Recebe os resultados do select
+    while ($reg = mysqli_fetch_assoc($res)) {
+      $id_anuncio = array();
+      $proprietario[$i]  = $reg['proprietario'];
+      $cidade[$i]        = $reg['cidade'];
+      $bairro[$i]        = $reg['bairro'];
+      $rua[$i]           = $reg['rua'];
+      $num[$i]           = $reg['num'];
+      $cep[$i]           = $reg['cep'];
+      $foto_f[$i]        = $reg['foto_f'];
+      $tipo[$i]          = $reg['tipo'];
+      $telefone[$i]      = $reg['telefone'];
+      $whatsapp[$i]      = $reg['whatsapp'];
+      $valor[$i]         = $reg['valor'];
+      $num_comodos[$i]   = $reg['num_comodos'];
+      $id_anunciante[$i] = $reg['id_user'];
+
+  ?>
+      <!- Card -->
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <div class="salvar_icon"><i data-feather="heart"></i></div>
+              <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
+              <p><?php echo $valor[$i] ?></p>
+              <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small>
+              <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
+              <p class="card-text"><small class="text-muted">3 de mar</small></p>
+              <a href="#" class="btn btn-card">Saiba Mais</a>
+            </div>
+          </div>
+        
+          </div>
+    <?php
+    $i++;
+    }
+    
+  }
+
+    ?>
+
+    
       </div>
-    </div>
 
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/img2.jpg" alt="Card image cap">
-        <div class="card-body">
-          <div class="salvar_icon"><i data-feather="heart"></i></div>
-          <h5 class="card-title">Aluguel</h5>
-          <p>R$ 680,00</p>
-          <small id="proprietario">Proprietário: Juvenal Rodrigues</small>
-          <p class="card-text text-justify"><span class="badge badge-danger">Indisponível</span></p>
-          <p class="card-text"><small class="text-muted">1 de mar</small></p>
-          <a href="#" class="btn btn-card">Saiba Mais</a>
-        </div>
-      </div>
-    </div>
+      <br>
 
-    <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/img3.jpg" alt="Card image cap">
-        <div class="card-body">
-          <div class="salvar_icon"><i data-feather="heart"></i></div>
-          <h5 class="card-title">Venda</h5>
-          <p>R$ 1.550,00</p>
-          <small id="proprietario">Proprietário: Marco Moreira</small>
-          <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
-          <p class="card-text"><small class="text-muted">28 de fev</small></p>
-          <a href="#" class="btn btn-card">Saiba Mais</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="text-center">
-    <a href="">Veja todos os anuncios</a>
-  </div>
-
-  <br>
+      <br>
 
 </div>
 
