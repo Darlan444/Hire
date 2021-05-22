@@ -36,7 +36,7 @@ include 'config/config.php';
 
 
   <br>
-  <h5>Meus Anúncios</h5>
+  <h6>Meus Anúncios</h6>
   <hr class="linha">
 
 
@@ -63,6 +63,7 @@ include 'config/config.php';
     $valor = array();
     $num_comodos = array();
     $id_anunciante = array();
+    $data_c = array();
     $i = 0;
 
     // Recebe os resultados do select
@@ -81,6 +82,7 @@ include 'config/config.php';
       $valor[$i]         = $reg['valor'];
       $num_comodos[$i]   = $reg['num_comodos'];
       $id_anunciante[$i] = $reg['id_user'];
+      $data_c[$i]        = $reg['data_c'];
 
   ?>
       <!- Card -->
@@ -88,13 +90,13 @@ include 'config/config.php';
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
             <div class="card-body">
-              <div class="salvar_icon"><i data-feather="heart"></i></div>
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
-              <p><?php echo $valor[$i] ?></p>
-              <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small>
-              <p class="card-text text-justify"><span class="badge badge-success">Disponível</span></p>
-              <p class="card-text"><small class="text-muted">3 de mar</small></p>
-              <a href="#" class="btn btn-card">Saiba Mais</a>
+              <p>Valor R$ <?php echo $valor[$i] ?></p>
+              <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
+              <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
+              <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
+              <a href="#" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" onmouseout="javascript: this.style.backgroundColor = '#000'">Editar</a>
+              <a href="#" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Apagar</a>
             </div>
           </div>
         

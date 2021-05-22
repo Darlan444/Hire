@@ -45,6 +45,4 @@ require_once 'config/config.php';
 
         $mysql_db->close();
 
-
-
 ?>
