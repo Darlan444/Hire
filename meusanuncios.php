@@ -45,7 +45,7 @@ include 'config/config.php';
     // Pega o id da seção atual
     $id = $_SESSION['id'];
   // Comando para selecionar anuncios
-  $sql_meusanuncios = "SELECT * FROM anuncio WHERE id_user= '$id'";
+  $sql_meusanuncios = "SELECT * FROM anuncio WHERE id_user= '$id' AND visibilidade = 1";
 
   // executa querry e define arrays para armazenar infos
   if ($res = mysqli_query($mysql_db, $sql_meusanuncios)) {
@@ -88,7 +88,7 @@ include 'config/config.php';
       <!- Card -->
         <div class="col-sm">
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="img/img1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/<?php echo $foto_f[$i] ?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
               <p>Valor R$ <?php echo $valor[$i] ?></p>
@@ -96,7 +96,7 @@ include 'config/config.php';
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
               <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
               <a href="#" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" onmouseout="javascript: this.style.backgroundColor = '#000'">Editar</a>
-              <a href="#" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Apagar</a>
+              <a href="deleteanuncio.php" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Apagar</a>
             </div>
           </div>
         

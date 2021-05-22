@@ -25,14 +25,15 @@ require_once 'config/config.php';
         $whatsapp = $_POST['whatsapp'];
         $valor = $_POST['valor'];
         $num_comodos = $_POST['num_comodos'];   
+        $visibilidade = 1;
         
         //Pega o id da seção atual
         $id = $_SESSION['id'];
 
         // Inserir dados no banco
         $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
-        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos, id_user) VALUES ('$proprietario','$cidade',
-        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' , '$id')";
+        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos, id_user, visibilidade) VALUES ('$proprietario','$cidade',
+        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
 
         $new_sql = mysqli_query($mysql_db, $sql);
         

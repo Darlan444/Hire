@@ -51,7 +51,7 @@ include 'config/config.php';
   <div class="row" id="row_cards">
   <?php
   // Comando para selecionar anuncios
-  $sql_anuncio = 'SELECT * FROM anuncio';
+  $sql_anuncio = 'SELECT * FROM anuncio WHERE visibilidade = "1"';
 
   // executa querry e define arrays para armazenar infos
   if ($res = mysqli_query($mysql_db, $sql_anuncio)) {
