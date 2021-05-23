@@ -14,25 +14,8 @@ include 'config/config.php';
 
 
 <div class="container">
-
-  <!--
-        
-        Código não usado!
-
-        <div class="grupo_lista">
-          <h6>Anuncie ou Procure Casas! 😀</h6>
-            <ul class="ul_menu">
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Alugar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Comprar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Anunciar</button></a></li>
-            </ul>
-        </div>
-        -->
-
   <br>
-
-
-  </form>
+</form>
 
 
   <br>
@@ -68,7 +51,7 @@ include 'config/config.php';
 
     // Recebe os resultados do select
     while ($reg = mysqli_fetch_assoc($res)) {
-      $id_anuncio = array();
+      $id_anuncio[$i]    = $reg['id'];
       $proprietario[$i]  = $reg['proprietario'];
       $cidade[$i]        = $reg['cidade'];
       $bairro[$i]        = $reg['bairro'];
@@ -87,7 +70,7 @@ include 'config/config.php';
   ?>
       <!- Card -->
         <div class="col-sm">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem; margin: 10px;">
             <img class="card-img-top" src="img/<?php echo $foto_f[$i] ?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
@@ -95,8 +78,13 @@ include 'config/config.php';
               <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
               <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
-              <a href="#" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" onmouseout="javascript: this.style.backgroundColor = '#000'">Editar</a>
-              <a href="deleteanuncio.php" class="btn btn-card" style="width: 120px;" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Apagar</a>
+              <a href="#" class="btn btn-card" style="width: 120px;" 
+                onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
+                onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
+              <a href="deleteanuncio.php?deleteanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+                onmousemove="javascript: this.style.backgroundColor = '#FA2929'" 
+                onmouseout="javascript: this.style.backgroundColor = '#000'"
+                onclick="return confirm('Tem certeza que deseja excluir o Anúncio?')">Apagar</a>
             </div>
           </div>
         

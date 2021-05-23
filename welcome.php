@@ -31,7 +31,7 @@ include 'config/config.php';
 
   <br>
 
-  <h5>Buscar</h5>
+  <h5 style="text-align: left;">Buscar</h5>
   <hr class="linha">
   <form action="" class="form-group">
     <input type="text" class="form-control is-valid" placeholder="Buscar" id="buscar-input">
@@ -44,7 +44,7 @@ include 'config/config.php';
 
 
   <br>
-  <h5>Anúncios</h5>
+  <h5 style="text-align: left;">Anúncios</h5>
   <hr class="linha">
 
 
