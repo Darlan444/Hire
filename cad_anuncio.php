@@ -19,9 +19,8 @@ require_once 'config/config.php';
         $rua = $_POST['rua'];
         $num = $_POST['num'];
         $cep = $_POST['cep'];
-        $foto_f = $_POST['foto_f'];
+        $foto_f = $novoNome;
         $tipo = $_POST['tipo'];
-        $telefone = $_POST['telefone'];
         $whatsapp = $_POST['whatsapp'];
         $valor = $_POST['valor'];
         $num_comodos = $_POST['num_comodos'];   
@@ -32,8 +31,8 @@ require_once 'config/config.php';
 
         // Inserir dados no banco
         $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
-        rua, num, cep, foto_f, tipo, telefone, whatsapp, valor, num_comodos, id_user, visibilidade) VALUES ('$proprietario','$cidade',
-        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$telefone', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
+        rua, num, cep, foto_f, tipo, whatsapp, valor, num_comodos, id_user, visibilidade) VALUES ('$proprietario','$cidade',
+        '$bairro','$rua','$num','$cep', '$novoNome', '$tipo', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
 
         $new_sql = mysqli_query($mysql_db, $sql);
         

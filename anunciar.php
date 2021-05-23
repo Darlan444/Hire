@@ -11,7 +11,32 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 <?php
- include 'includes/menudashboard.php'; 
+include 'includes/menudashboard.php';
+
+// FOTOS
+//formatos permitidos
+$formatos = array("png", "jpg", "jpeg");
+
+if (isset($_FILES['foto_f'])) :
+
+        $extensao = PATHINFO($_FILES['foto_f']['name'], PATHINFO_EXTENSION);
+
+        if (in_array($extensao, $formatos)) :
+
+            $pasta = "img/";
+
+            //caminho temporario
+            $temporario = $_FILES['foto_f']['tmp_name'];
+
+            //renomeando o arquivo de upload
+            $novoNome = uniqid() . ".$extensao";
+
+            // EXECUTANDO O UPLOAD
+            move_uploaded_file($temporario, $pasta . $novoNome);
+
+        endif;
+endif;
+
 
 
 ?>
@@ -31,17 +56,17 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
     <br>
 
-    <div class="alert alert-warning" role="alert">
+    <!-- <div class="alert alert-warning" role="alert">
         <h5><i data-feather="alert-triangle"></i></h5>
         <p><small>O "Tipo: Disponível" só poderá ser editado para indisponível depois que o imóvel for adquirido.</small></p>
         <p><small>Fique atento ao número de telefone inserido, pois os usuários entrarão em contato pelo número inserido.</small></p>
-    </div>
+    </div> -->
     <br>
 
-    <h5>Criar Anuncio</h5>
+    <h5 style="text-align: left;">Criar Anuncio</h5>
     <hr class="linha">
 
-    <form method="POST" action="cad_anuncio.php" >
+    <form method="POST" action="cad_anuncio.php" enctype="multipart/form-data">
 
         <!- Máscaras -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -84,47 +109,36 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                     <label for="bairro">Bairro*</label>
                     <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="cep">CEP*</label>
-                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
-                    <script type="text/javascript">
-                        $("#cep").mask("00000-000");
-                    </script>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="tipo_d">Tipo</label>
-                    <select id="tipo_d" name="tipo_d" class="form-control" disabled>
-                        <option selected>Disponível</option>
-                        <option>Indisponível</option>
-
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="foto_f">Foto da Fachada*</label>
-                    <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
-                </div>
-
-
-
-                <div class="form-group col-md-4">
-                    <label for="telefone">Telefone / Celular*</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-                    <script type="text/javascript">
-                        $("#telefone").mask("(00) 90000-0000");
-                    </script>
-                </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label for="whatsapp">Whatsapp</label>
                     <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
                     <script type="text/javascript">
                         $("#whatsapp").mask("(00) 90000-0000");
                     </script>
                 </div>
+                <div class="form-group col-md-3">
+                    <label for="cep">CEP*</label>
+                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
+                    <script type="text/javascript">
+                        $("#cep").mask("00000-000");
+                    </script>
+                </div>
             </div>
 
-            <h5>Sobre o Imóvel</h5>
+
+
+
+            <!-- <div class="form-group col-md-3">
+                    <label for="telefone">Telefone / Celular*</label>
+                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    <script type="text/javascript">
+                        $("#telefone").mask("(00) 90000-0000");
+                    </script>
+                </div> -->
+
+
+
+            <h5 style="text-align: left;">Sobre o Imóvel</h5>
             <hr class="linha">
 
             <div class="form-row">
@@ -154,6 +168,26 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             </div>
 
             <!-- <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="foto_f">Foto da Fachada*</label>
+                    <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
+                </div>
+            </div> -->
+
+            <div class="form-group col-md-4 ">
+                <label for="exampleInputFile">Foto da Fachada<i class="fas fa-paw"></i></label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="foto_f" class="custom-file-input" id="foto_f">
+                        <label class="custom-file-label" for="foto_f">Foto</label>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-upload"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="">Fotos do Cômodo*</label>
                         <input type="file" class="form-control-file" id="" name="" required multiple> 
@@ -162,7 +196,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
             <button type="submit" class="btn btn-anunciar" onclick="return confirm('Tem certeza que deseja criar Anúncio?')">Anunciar</button>
-            <button type="reset" class="btn btn-limpar">Limpar</button>
+            <button type="reset" class="btn btn-limpar" onclick="return confirm('Tem certeza que deseja limpar informações inseridas?')">Limpar</button>
     </form>
 
 
