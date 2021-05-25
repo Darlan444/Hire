@@ -111,7 +111,7 @@ endif;
                 </div>
                 <div class="form-group col-md-3">
                     <label for="whatsapp">Whatsapp</label>
-                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
+                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
                     <script type="text/javascript">
                         $("#whatsapp").mask("(00) 90000-0000");
                     </script>
