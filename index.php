@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <div class="form-group">
-        <input type="submit" class="btn btn-lg btn-login btn-block" value="login" onmousemove="javascript: this.style.backgroundColor = '#0CE89B'" onmouseout="javascript: this.style.backgroundColor = '#000'">
+        <input type="submit" class="btn btn-lg btn-login btn-block" value="login" onmousemove="javascript: this.style.backgroundColor = '#25A87F'" onmouseout="javascript: this.style.backgroundColor = '#000'">
       </div>
       <p>Não tem uma conta? <a href="register.php">Registrar</a>.</p>
       <p class="mt-5 mb-3" style="color: rgb(0, 0, 0);">&copy; Juazeiro do Norte - CE | Hire 💖</p>
