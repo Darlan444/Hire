@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 			<div class="form-group">
-				<input type="submit" class="btn btn-lg btn-login btn-block" value="Cadastrar">
+				<input type="submit" class="btn btn-lg btn-login btn-block" value="Cadastrar" onmousemove="javascript: this.style.backgroundColor = '#25A87F'" onmouseout="javascript: this.style.backgroundColor = '#000'">
 			</div>
 			<p style="text-align:center;">Já tem conta? Entre agora! <a href="index.php">Login Aqui</a>.</p>
 		</form>
