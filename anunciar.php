@@ -13,30 +13,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 <?php
 include 'includes/menudashboard.php';
 
-// FOTOS
-//formatos permitidos
-$formatos = array("png", "jpg", "jpeg");
-
-if (isset($_FILES['foto_f'])) :
-
-        $extensao = PATHINFO($_FILES['foto_f']['name'], PATHINFO_EXTENSION);
-
-        if (in_array($extensao, $formatos)) :
-
-            $pasta = "img/";
-
-            //caminho temporario
-            $temporario = $_FILES['foto_f']['tmp_name'];
-
-            //renomeando o arquivo de upload
-            $novoNome = uniqid() . ".$extensao";
-
-            // EXECUTANDO O UPLOAD
-            move_uploaded_file($temporario, $pasta . $novoNome);
-
-        endif;
-endif;
-
 
 
 ?>
