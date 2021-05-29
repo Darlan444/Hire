@@ -41,7 +41,6 @@ include 'config/config.php';
     $cep = array();
     $foto_f = array();
     $tipo = array();
-    $telefone = array();
     $whatsapp = array();
     $valor = array();
     $num_comodos = array();
@@ -60,7 +59,6 @@ include 'config/config.php';
       $cep[$i]           = $reg['cep'];
       $foto_f[$i]        = $reg['foto_f'];
       $tipo[$i]          = $reg['tipo'];
-      $telefone[$i]      = $reg['telefone'];
       $whatsapp[$i]      = $reg['whatsapp'];
       $valor[$i]         = $reg['valor'];
       $num_comodos[$i]   = $reg['num_comodos'];
@@ -73,18 +71,23 @@ include 'config/config.php';
           <div class="card" style="width: 18rem; margin: 10px;">
             <img class="card-img-top" src="img/<?php echo $foto_f[$i] ?>" alt="Card image cap">
             <div class="card-body">
+
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
               <p>Valor R$ <?php echo $valor[$i] ?></p>
               <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
+
               <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
-              <a href="#" class="btn btn-card" style="width: 120px;" 
+              
+              <a href="editar_anuncio.php?id_anuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
                 onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
+
               <a href="deleteanuncio.php?deleteanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
                 onmousemove="javascript: this.style.backgroundColor = '#FA2929'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'"
                 onclick="return confirm('Tem certeza que deseja excluir o Anúncio?')">Apagar</a>
+
             </div>
           </div>
         

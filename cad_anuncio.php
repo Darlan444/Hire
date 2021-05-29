@@ -45,7 +45,7 @@ $bairro         = $_POST['bairro'];
 $rua            = $_POST['rua'];
 $num            = $_POST['num'];
 $cep            = $_POST['cep'];
-$foto_f         = $novoNome;
+$foto_f         = $_POST['foto_f'];
 $tipo           = $_POST['tipo'];
 $whatsapp       = $_POST['whatsapp'];
 $valor          = $_POST['valor'];
@@ -58,7 +58,7 @@ $id = $_SESSION['id'];
 // Inserir dados no banco
 $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
         rua, num, cep, foto_f, tipo, whatsapp, valor, num_comodos, id_user, visibilidade) VALUES ('$proprietario','$cidade',
-        '$bairro','$rua','$num','$cep', '$novoNome', '$tipo', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
+        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
 
 $new_sql = mysqli_query($mysql_db, $sql);
 
