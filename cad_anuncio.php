@@ -39,7 +39,7 @@ $visibilidade   = 1;
         $images_file = $_FILES['foto_f']['name'][$key_image];
         $images_file_tmp = $_FILES['foto_f']['tmp_name'][$key_image];
         move_uploaded_file($images_file_tmp, $images_location.$images_file);
-        $image_data .= $images_file." ";
+        $image_data .= strtolower($images_file." ");
     }
 
 

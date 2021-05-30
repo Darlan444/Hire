@@ -14,10 +14,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 include 'includes/menudashboard.php';
 include 'config/config.php';
 
-if (isset($_GET['id_anuncio'])) {
-    $id_anuncio     = $_GET['id_anuncio'];
-}
-
 
 ?>
 

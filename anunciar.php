@@ -154,7 +154,7 @@ include 'includes/menudashboard.php';
                 <label for="exampleInputFile">Foto da Fachada<i class="fas fa-paw"></i></label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="foto_f[]" class="custom-file-input" id="foto_f[]">
+                        <input type="file" name="foto_f[]" class="custom-file-input" id="foto_f[]" multiple required>
                         <label class="custom-file-label" for="foto_f">Foto</label>
                     </div>
                 </div>

@@ -15,17 +15,20 @@ require_once 'config/config.php';
 // Pega dados do form
 $newproprietario  = $_POST['newproprietario'];
 $newcidade        = $_POST['newcidade'];
-$newbairro       = $_POST['newbairro'];
-$newrua         = $_POST['newrua'];
-$newnum         = $_POST['newnum'];
-$newcep          = $_POST['newcep'];
+$newbairro        = $_POST['newbairro'];
+$newrua           = $_POST['newrua'];
+$newnum           = $_POST['newnum'];
+$newcep           = $_POST['newcep'];
 $newtipo          = $_POST['newtipo'];
 $newwhatsapp      = $_POST['newwhatsapp'];
 $newvalor         = $_POST['newvalor'];
 $newnum_comodos   = $_POST['newnum_comodos'];
 
 //Pega o id do anúncio
-$id_anuncio     = $_GET['id_anuncio'];
+
+if (isset($_GET['id_anuncio'])) {
+    $id_anuncio = $_GET['id_anuncio'];
+}
 
 
 

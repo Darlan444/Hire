@@ -92,7 +92,7 @@ include 'config/config.php';
       <!- Card -->
         <div class="col-sm">
           <div class="card" style="width: 18rem; margin: 10px;">
-            <img class="card-img-top" src="img/<?php echo $foto_f[$i] ?>" alt="Card image cap">
+            <img class="card-img-top" src="img/img_upload/<?php echo $foto_f[$i] ?>" alt="Card image" width="100%">
             <div class="card-body">
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
               <p>Valor: R$ <?php echo $valor[$i] ?></p>
