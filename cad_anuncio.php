@@ -10,34 +10,17 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 <?php
-
+require_once 'config/config.php';
 
 // Fotos
-//formatos permitidos
-$formatos = array("png", "jpg", "jpeg");
 
-if (isset($_FILES['foto_f'])) :
+if (isset($_POST['btn-anunciar'])) {
 
-    $extensao = PATHINFO($_FILES['foto_f']['name'], PATHINFO_EXTENSION);
+    $images_file = '';
+    $images_file_tmp = '';
+    $images_location = 'img/img_upload/';
+    $image_data = '';
 
-    if (in_array($extensao, $formatos)) :
-
-        $pasta = "img/";
-
-        //caminho temporario
-        $temporario = $_FILES['foto_f']['tmp_name'];
-
-        //renomeando o arquivo de upload
-        $novoNome = uniqid() . ".$extensao";
-
-        // EXECUTANDO O UPLOAD
-        move_uploaded_file($temporario, $pasta . $novoNome);
-
-    endif;
-endif;
-
-
-require_once 'config/config.php';
 // Pega dados do form
 $proprietario   = $_POST['proprietario'];
 $cidade         = $_POST['cidade'];
@@ -52,13 +35,21 @@ $valor          = $_POST['valor'];
 $num_comodos    = $_POST['num_comodos'];
 $visibilidade   = 1;
 
+    foreach($_FILES['foto_f']['name'] as $key_image=>$val_image){
+        $images_file = $_FILES['foto_f']['name'][$key_image];
+        $images_file_tmp = $_FILES['foto_f']['tmp_name'][$key_image];
+        move_uploaded_file($images_file_tmp, $images_location.$images_file);
+        $image_data .= $images_file." ";
+    }
+
+
 //Pega o id da seção atual
 $id = $_SESSION['id'];
 
 // Inserir dados no banco
 $sql = "INSERT INTO anuncio(proprietario, cidade, bairro,
         rua, num, cep, foto_f, tipo, whatsapp, valor, num_comodos, id_user, visibilidade) VALUES ('$proprietario','$cidade',
-        '$bairro','$rua','$num','$cep', '$foto_f', '$tipo', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
+        '$bairro','$rua','$num','$cep', '$image_data', '$tipo', '$whatsapp','$valor','$num_comodos' , '$id', $visibilidade)";
 
 $new_sql = mysqli_query($mysql_db, $sql);
 
@@ -67,6 +58,7 @@ if (mysqli_affected_rows($mysql_db) != 0) {
     header('location: index.php');
 } else {
     echo "Não foi possivel cadastrar";
+}
 }
 
 $mysql_db->close();
