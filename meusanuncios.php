@@ -79,7 +79,7 @@ include 'config/config.php';
 
               <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
               
-              <a href="editar_anuncio.php?id_anuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+              <a href="editar_anuncio.php?editar_anuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
                 onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
 

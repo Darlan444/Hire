@@ -14,7 +14,9 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 include 'includes/menudashboard.php';
 include 'config/config.php';
 
-
+if(isset($_GET['editar_anuncio'])){
+    $id_anuncio = $_GET['editar_anuncio'];
+}
 ?>
 
 
@@ -40,7 +42,7 @@ include 'config/config.php';
 </div> -->
         <br>
 
-        <h5 style="text-align: left;">Criar Anuncio</h5>
+        <h5 style="text-align: left;">Editar Anuncio</h5>
         <hr class="linha">
 
         <form method="POST" action="edt_anuncio.php" enctype="multipart/form-data">

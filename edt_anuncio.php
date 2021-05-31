@@ -26,11 +26,9 @@ $newnum_comodos   = $_POST['newnum_comodos'];
 
 //Pega o id do anúncio
 
-if (isset($_GET['id_anuncio'])) {
-    $id_anuncio = $_GET['id_anuncio'];
+if (isset($_GET['editar_anuncio'])) {
+    $id_anuncio = $_GET['editar_anuncio'];
 }
-
-
 
 // UPDATE dados no banco
 $sql = "UPDATE `anuncio` SET `propritario`= '$newproprietario',`cidade`='$newcidade',`bairro`='$newbairrp',`rua`='$newrua',
