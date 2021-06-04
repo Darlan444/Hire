@@ -10,7 +10,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 <?php
-require_once 'config/config.php';
+require_once '../config/config.php';
 
 // Fotos
 
@@ -18,7 +18,7 @@ if (isset($_POST['btn-anunciar'])) {
 
     $images_file = '';
     $images_file_tmp = '';
-    $images_location = 'img/img_upload/';
+    $images_location = '../img/img_upload/';
     $image_data = '';
 
     // Pega dados do form
@@ -63,7 +63,8 @@ if (isset($_POST['btn-anunciar'])) {
 
             // Redireciona se feito o anuúncio
             if (mysqli_affected_rows($mysql_db) != 0) {
-                header('location: index.php');
+                $_SESSION['cad_anuncio'] = 'Anúncio realizado com Sucesso!';
+                header('location: ../view/meusanuncios.php');
             } else {
                 echo "Não foi possivel cadastrar";
             }

@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-    header('location: index.php');
+    header('location: ../view/index.php');
     exit;
 }
 ?>
@@ -11,8 +11,8 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 <?php
-include 'includes/menudashboard.php';
-include 'config/config.php';
+include '../includes/menudashboard.php';
+include '../config/config.php';
 
 if(isset($_GET['editar_anuncio'])){
     $id_anuncio = $_GET['editar_anuncio'];
@@ -45,7 +45,7 @@ if(isset($_GET['editar_anuncio'])){
         <h5 style="text-align: left;">Editar Anuncio</h5>
         <hr class="linha">
 
-        <form method="POST" action="edt_anuncio.php" enctype="multipart/form-data">
+        <form method="POST" action="../model/edt_anuncio.php" enctype="multipart/form-data">
 
             <!- Máscaras -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -95,13 +95,11 @@ if(isset($_GET['editar_anuncio'])){
                             $result = $mysql_db->query($sql_p_anuncio);
 
 
-                            while ($row = $result->fetch_row()) {
-                            printf("%s\n", $row[0]);
-                            }
+                            while ($row = $result->fetch_row()) {}
                             ?>" required>
                             <option selected>Juazeiro do Norte - CE</option>
-                            <option>Crato - CE</option>
-                            <option>Barbalha - CE</option>
+                            <option >Crato - CE</option>
+                            <option >Barbalha - CE</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
@@ -230,18 +228,17 @@ if(isset($_GET['editar_anuncio'])){
 
 
                             while ($row = $result->fetch_row()) {
-                            printf("%s\n", $row[0]);
                             }
                             ?>" required>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>+ de 10</option>
+                            <option selected>3</option>
+                            <option >4</option>
+                            <option >5</option>
+                            <option >6</option>
+                            <option >7</option>
+                            <option >8</option>
+                            <option >9</option>
+                            <option >10</option>
+                            <option >+ de 10</option>
                         </select>
                     </div>
                 </div>
@@ -302,4 +299,4 @@ if(isset($_GET['editar_anuncio'])){
     </div>
 </footer>
 
-<?php include 'includes/footerdashboard.php'; ?>
+<?php include '../includes/footerdashboard.php';?>

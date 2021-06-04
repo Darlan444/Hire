@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-    header('location: index.php');
+    header('location: ../view/index.php');
     exit;
 }
 ?>
@@ -11,7 +11,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 <?php
 
-require_once 'config/config.php';
+require_once '../config/config.php';
 // Pega dados do form
 $newproprietario  = $_POST['newproprietario'];
 $newcidade        = $_POST['newcidade'];
@@ -39,7 +39,7 @@ $new_sql = mysqli_query($mysql_db, $sql);
 
 // Redireciona se feito o anuúncio
 if (mysqli_affected_rows($mysql_db) != 0) {
-    header('location: meusanuncios.php');
+    header('location: ../view/meusanuncios.php');
 } else {
     echo "Não foi possivel editar!";
 }

@@ -1,4 +1,4 @@
-<?php include'includes/menuhome.php';?>
+<?php include '../includes/menuhome.php'; ?>
 
 <div class="container">
     <br>
@@ -16,13 +16,15 @@
         <div class="flex-item">
             <p class="quem-somos-text">Hire é uma plataforma Web onde você pode encontrar imóveis na região do cariri para aluguel ou venda. Você como usuário poderá anunciar seus imóveis com alguns cliques!</p>
         </div>
+    </section>
+    <section class="area-text">
         <div class="flex-item">
-           <h4>Entre em Contato!</h4>
-           <hr class="linha">
-           <small>E-mail disponível para contato e duvidas em geral.</small>
-           <p>hire@mail.com</p>
+            <h4>Entre em Contato!</h4>
+            <hr class="linha">
+            <small>E-mail disponível para contato e duvidas em geral.</small>
+            <p>hire@mail.com</p>
         </div>
     </section>
 </div>
 
-<?php include'includes/footerhome.php';?>
+<?php include '../includes/footerhome.php'; ?>

@@ -1,5 +1,5 @@
 <?php
-	// Initialize session
+	// Initializa session
 	session_start();
 
 	if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
@@ -11,7 +11,7 @@
 
 <?php 
 
-require_once 'config/config.php';
+require_once '../config/config.php';
         // Pega dados do form
         $newemail = $_POST['newemail'];
         $newnome = $_POST['newnome'];
@@ -26,9 +26,10 @@ require_once 'config/config.php';
 
         $new_sql = mysqli_query($mysql_db, $sql);
         
-        // Redireciona se feito o anuúncio
+        // Redireciona se alterar
         if (mysqli_affected_rows($mysql_db) != 0 ) { 
-            header('location: perfil.php');
+            $_SESSION['att_perfil'] = 'Perfil Atualizado!';
+            header('location: ../view/perfil.php');
         } else {
             echo "Não foi possivel editar!";
         }

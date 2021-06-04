@@ -3,16 +3,16 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-    header('location: index.php');
+    header('location: ../view/index.php');
     exit;
 }
 ?>
 
-<?php include 'includes/menudashboard.php'; ?>
-<?php include 'config/config.php'; ?>
+<?php include '../includes/menudashboard.php'; ?>
+<?php include '../config/config.php'; ?>
 
 
-<form method="POST" action="edt_perfil.php">
+<form method="POST" action="../model/edt_perfil.php">
     <div class="container">
         <div class="main-body">
 
@@ -134,4 +134,4 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 </form>
 
 
-<?php include 'includes/footerdashboard.php'; ?>
+<?php include '../includes/footerdashboard.php'; ?>

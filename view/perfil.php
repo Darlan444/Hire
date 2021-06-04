@@ -3,13 +3,13 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-  header('location: index.php');
+  header('location: ../view/index.php');
   exit;
 }
 ?>
 
-<?php include 'includes/menudashboard.php'; ?>
-<?php include 'config/config.php'; ?>
+<?php include '../includes/menudashboard.php'; ?>
+<?php include '../config/config.php'; ?>
 
 
 
@@ -35,6 +35,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             </div> -->
     <div class="form-signin text-center">
       <div class="card mb-4">
+
+      <?php if (isset($_SESSION['att_perfil'])) : ?>
+        <div class="alert alert-success" role="alert">
+          <?= $_SESSION['att_perfil']; ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php
+      endif;
+      unset($_SESSION['att_perfil']);
+      ?>
+
         <div class="card-body">
           <div class="row">
             <div class="col-sm-4">
@@ -133,7 +146,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
       </div>
       <div>
         <a href="editar_perfil.php"><button class="btn btn-editar">Editar</button></a>
-        <a href="password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
+        <a href="../model/password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
       </div>
     </div>
   </div>
@@ -142,4 +155,4 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 
-<?php include 'includes/footerdashboard.php'; ?>
+<?php include '../includes/footerdashboard.php'; ?>

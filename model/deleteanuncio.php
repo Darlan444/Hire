@@ -1,6 +1,6 @@
 <?php 
 
-include "config/config.php";
+include "../config/config.php";
 
     if(isset($_GET['deleteanuncio'])){
         $id_anuncio = $_GET['deleteanuncio'];
@@ -9,7 +9,7 @@ include "config/config.php";
         $new_sql_del = mysqli_query($mysql_db, $sql_del);
     }
     if (mysqli_affected_rows($mysql_db) != 0 ) { 
-        header('location: meusanuncios.php');
+        header('location: ../view/meusanuncios.php');
     } else {
         echo "Não foi possivel Apagar!";
     }

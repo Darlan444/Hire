@@ -8,7 +8,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
 }
  
 // Chama conexão bd
-require_once 'config/config.php';
+require_once '../config/config.php';
  
 // Define variaveis e inicializa com valores vazios
 $new_password = $confirm_password = '';
@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if($stmt->execute()){
                 // Finaliza seção e redireciona
                 session_destroy();
-                header("location: index.php");
+                header("location: ../view/index.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 ?>
  
-<?php include'includes/menudashboard.php';?>
+<?php include '../includes/menudashboard.php';?>
 
     <main class="">
         <section>
@@ -90,4 +90,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         </section>
     </main>
 
-<?php include'includes/footerdashboard.php';?>
+<?php include '../includes/footerdashboard.php';?>

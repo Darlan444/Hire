@@ -3,58 +3,46 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-  header('location: index.php');
+  header('location: ../view/index.php');
   exit;
 }
 ?>
 <?php
-include 'includes/menudashboard.php';
-include 'config/config.php';
+include '../includes/menudashboard.php';
+include '../config/config.php';
 ?>
 
 
 <div class="container">
-
-  <!--
-        
-        Código não usado!
-
-        <div class="grupo_lista">
-          <h6>Anuncie ou Procure Casas! 😀</h6>
-            <ul class="ul_menu">
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Alugar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Comprar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Anunciar</button></a></li>
-            </ul>
-        </div>
-        -->
-
   <br>
-
-  <h5 style="text-align: left;">Buscar</h5>
-  <hr class="linha">
-  <form action="" class="form-group">
-    <input type="text" class="form-control is-valid" placeholder="Buscar" id="buscar-input">
-    <div class="valid-feedback">
-      Procure por Cidade, Bairro ou Rua!
-    </div>
-    <button class="btn btn-buscar">Buscar</button>
-
-  </form>
+</form>
 
 
   <br>
-  <h5 style="text-align: left;">Anúncios</h5>
+  <h6>Meus Anúncios</h6>
   <hr class="linha">
 
+  <?php if (isset($_SESSION['cad_anuncio'])) : ?>
+      <div class="alert alert-success" role="alert">
+        <?= $_SESSION['cad_anuncio']; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <?php
+    endif;
+    unset($_SESSION['cad_anuncio']);
+    ?>
 
   <div class="row" id="row_cards">
   <?php
+    // Pega o id da seção atual
+    $id = $_SESSION['id'];
   // Comando para selecionar anuncios
-  $sql_anuncio = 'SELECT * FROM anuncio WHERE visibilidade = "1"';
+  $sql_meusanuncios = "SELECT * FROM anuncio WHERE id_user= '$id' AND visibilidade = 1";
 
   // executa querry e define arrays para armazenar infos
-  if ($res = mysqli_query($mysql_db, $sql_anuncio)) {
+  if ($res = mysqli_query($mysql_db, $sql_meusanuncios)) {
     $id_anuncio = array();
     $proprietario = array();
     $cidade = array();
@@ -71,9 +59,9 @@ include 'config/config.php';
     $data_c = array();
     $i = 0;
 
-    // Recebe os resultados do select
+    // Recebe os resultados do select   
     while ($reg = mysqli_fetch_assoc($res)) {
-      $id_anuncio = array();
+      $id_anuncio[$i]    = $reg['id'];
       $proprietario[$i]  = $reg['proprietario'];
       $cidade[$i]        = $reg['cidade'];
       $bairro[$i]        = $reg['bairro'];
@@ -92,14 +80,25 @@ include 'config/config.php';
       <!- Card -->
         <div class="col-sm">
           <div class="card" style="width: 18rem; margin: 10px;">
-            <img class="card-img-top" src="img/img_upload/<?php echo $foto_f[$i] ?>" alt="Card image" width="100%">
+            <img class="card-img-top" src="../img/img_upload/<?php echo $foto_f[$i] ?>" alt="Card image cap">
             <div class="card-body">
+
               <h5 class="card-title"><?php echo $tipo[$i] ?></h5>
-              <p>Valor: R$ <?php echo $valor[$i] ?></p>
+              <p>Valor R$ <?php echo $valor[$i] ?></p>
               <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
-              <p class="card-text"><small class="text-muted">Anunciado em: <?php echo $data_c[$i] ?></small></p>
-              <a href="#" class="btn btn-card" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Saiba Mais</a>
+
+              <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
+              
+              <a href="editar_anuncio.php?editar_anuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+                onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
+                onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
+
+              <a href="../model/deleteanuncio.php?deleteanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+                onmousemove="javascript: this.style.backgroundColor = '#FA2929'" 
+                onmouseout="javascript: this.style.backgroundColor = '#000'"
+                onclick="return confirm('Tem certeza que deseja excluir o Anúncio?')">Apagar</a>
+
             </div>
           </div>
         
@@ -127,4 +126,4 @@ include 'config/config.php';
   </div>
 </footer>
 
-<?php include 'includes/footerdashboard.php'; ?>
+<?php include '../includes/footerdashboard.php'; ?>

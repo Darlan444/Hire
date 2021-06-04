@@ -2,12 +2,12 @@
 // Verificação de login
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-  header("location: welcome.php");
+  header("location: ../view/welcome.php");
   exit;
 }
 
 // conexao do banco
-require_once "config/config.php";
+require_once "../config/config.php";
 
 // Define variaveis e inicializa com valores vazios
 $username = $password = '';
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php include 'includes/menuhome.php'; ?>
+<?php include '../includes/menuhome.php'; ?>
 
 <main>
 
@@ -94,8 +94,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <section class="">
     <form class="form-signin text-center" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-      <h1 class="text-home"><img src="img/logohireblack.svg" alt="" width=""></h1>
+
+      <h1 class="text-home"><img src="../img/logohireblack.svg" alt="" width=""></h1>
       <br>
+
+      <?php if (isset($_SESSION['cad_sucesso'])) : ?>
+        <div class="alert alert-success" role="alert">
+          <?= $_SESSION['cad_sucesso']; ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php
+      endif;
+      unset($_SESSION['cad_sucesso']);
+      ?>
+
       <div class="form-group <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
         <input type="text" name="username" id="username" class="form-control" placeholder="Usuário" value="<?php echo $username ?>">
         <span class="help-block"><?php echo $username_err; ?></span>
@@ -115,4 +129,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </section>
 </main>
 
-<?php include 'includes/footerhome.php'; ?>
+<?php include '../includes/footerhome.php'; ?>
