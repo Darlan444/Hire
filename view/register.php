@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if ($stmt->execute()) {
 				$_SESSION['cad_sucesso'] = 'Conta registrada com sucesso! </br> Basta fazer login!';
 				// Redireciona para logar
-				header('location: index.php');
+				header('location: ../index.php');
 			} else {
 				header('location: register.php');
 			}

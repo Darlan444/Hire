@@ -3,7 +3,7 @@
 session_start();
  
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
-    header('location: ../view/index.php');
+    header('location: ../index.php');
     exit;
 }
  
@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if($stmt->execute()){
                 // Finaliza seção e redireciona
                 session_destroy();
-                header("location: ../view/index.php");
+                header("location: ../index.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";

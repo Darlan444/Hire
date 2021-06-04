@@ -8,6 +8,6 @@
 	session_destroy();
 
 	// Redireciona para login
-	header('location: ../view/index.php');
+	header('location: ../index.php');
 	exit;
 ?>
