@@ -12,7 +12,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 <?php include '../config/config.php'; ?>
 
 
-<form method="POST" action="../model/edt_perfil.php">
+<form method="POST" action="../controller/edt_perfil.php">
     <div class="container">
         <div class="main-body">
 

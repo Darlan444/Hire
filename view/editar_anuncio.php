@@ -45,7 +45,7 @@ if(isset($_GET['editar_anuncio'])){
         <h5 style="text-align: left;">Editar Anuncio</h5>
         <hr class="linha">
 
-        <form method="POST" action="../model/edt_anuncio.php" enctype="multipart/form-data">
+        <form method="POST" action="../controller/edt_anuncio.php" enctype="multipart/form-data">
 
             <!- Máscaras -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

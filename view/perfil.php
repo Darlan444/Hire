@@ -146,7 +146,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
       </div>
       <div>
         <a href="editar_perfil.php"><button class="btn btn-editar">Editar</button></a>
-        <a href="../model/password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
+        <a href="../controller/password_reset.php"><button class="btn btn-editar">Redefinir senha</button></a>
       </div>
     </div>
   </div>

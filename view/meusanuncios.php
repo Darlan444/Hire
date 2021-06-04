@@ -105,7 +105,7 @@ include '../config/config.php';
                 onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
 
-              <a href="../model/deleteanuncio.php?deleteanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+              <a href="../controller/deleteanuncio.php?deleteanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
                 onmousemove="javascript: this.style.backgroundColor = '#FA2929'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'"
                 onclick="return confirm('Tem certeza que deseja excluir o Anúncio?')">Apagar</a>

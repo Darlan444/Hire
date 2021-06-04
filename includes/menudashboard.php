@@ -33,7 +33,7 @@
             <a class="nav-link" href="../view/perfil.php">Perfil</a>
           </li>
           <li class="nav-item" id="">
-            <a class="nav-link" href="../model/logout.php"><img src="img/iconsair.png" alt="" width="20"> Sair</a>
+            <a class="nav-link" href="../controller/logout.php"><img src="img/iconsair.png" alt="" width="20"> Sair</a>
           </li>
           
         </ul>

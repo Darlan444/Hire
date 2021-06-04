@@ -20,6 +20,7 @@ if (isset($_POST['btn-anunciar'])) {
     $images_file_tmp = '';
     $images_location = '../img/img_upload/';
     $image_data = '';
+    $extensao = array();
 
     // Pega dados do form
     $proprietario   = $_POST['proprietario'];
@@ -28,7 +29,6 @@ if (isset($_POST['btn-anunciar'])) {
     $rua            = $_POST['rua'];
     $num            = $_POST['num'];
     $cep            = $_POST['cep'];
-    $foto_f         = $_POST['foto_f'];
     $tipo           = $_POST['tipo'];
     $whatsapp       = $_POST['whatsapp'];
     $valor          = $_POST['valor'];
@@ -42,6 +42,7 @@ if (isset($_POST['btn-anunciar'])) {
         $images_file = $_FILES['foto_f']['name'][$key_image];
         $images_file_tmp = $_FILES['foto_f']['tmp_name'][$key_image];
         $extensao = pathinfo($images_file, PATHINFO_EXTENSION);
+    }
 
         if (in_array($extensao, $extensao_permitida)) {
 
@@ -68,14 +69,14 @@ if (isset($_POST['btn-anunciar'])) {
             } else {
                 echo "Não foi possivel cadastrar";
             }
-    }else{
-        echo "Formato Inválido!";
-    }
+        }else{
+            echo "Formato Inválido!";
+        }
 
 
     
     }
-}
+
 
 $mysql_db->close();
 

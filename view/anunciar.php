@@ -42,7 +42,7 @@ include '../includes/menudashboard.php';
     <h5 style="text-align: left;">Criar Anuncio</h5>
     <hr class="linha">
 
-    <form method="POST" action="../model/cad_anuncio.php" enctype="multipart/form-data">
+    <form method="POST" action="../controller/cad_anuncio.php" enctype="multipart/form-data">
 
         <!- Máscaras -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
