@@ -33,6 +33,17 @@ include '../config/config.php';
     endif;
     unset($_SESSION['cad_anuncio']);
     ?>
+    <?php if (isset($_SESSION['del_anuncio'])) : ?>
+        <div class="alert alert-danger" role="alert">
+          <?= $_SESSION['del_anuncio']; ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php
+      endif;
+      unset($_SESSION['del_anuncio']);
+      ?>
 
   <div class="row" id="row_cards">
   <?php
