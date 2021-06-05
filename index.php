@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <section class="">
     <form class="form-signin text-center" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
-      <h1 class="text-home"><img src="../img/logohireblack.svg" alt="" width=""></h1>
+      <h1 class="text-home"><img src="img/logohireblack.svg" alt="" width=""></h1>
       <br>
 
       <?php if (isset($_SESSION['cad_sucesso'])) : ?>

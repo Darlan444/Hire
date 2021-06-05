@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../config/config.php';
+require_once 'config/config.php';
 
 
 // Define variáveis e inicializa com valores vazios
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if ($stmt->execute()) {
 				$_SESSION['cad_sucesso'] = 'Conta registrada com sucesso! </br> Basta fazer login!';
 				// Redireciona para logar
-				header('location: ../index.php');
+				header('location: index.php');
 			} else {
 				header('location: register.php');
 			}
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php include '../includes/menuhome.php'; ?>
+<?php include 'includes/menuhome.php'; ?>
 <main>
 	<section class="">
 
@@ -177,4 +177,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</section>
 </main>
 
-<?php include '../includes/footerhome.php'; ?>
+<?php include 'includes/footerhome.php'; ?>

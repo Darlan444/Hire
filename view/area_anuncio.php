@@ -33,20 +33,19 @@ if (isset($_GET['foto_anuncio'])){
                 <!--DADOS DO IMÓVEL-->
                 <p class="h5 mb-6"><strong><?php
 
-                                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
-                                            $sql_p_anuncio = "SELECT tipo FROM anuncio WHERE id = '$id_anuncio'";
-                                            $result = $mysql_db->query($sql_p_anuncio);
+                    $sql_p_anuncio = "SELECT tipo FROM anuncio WHERE id = '$id_anuncio'";
+                    $result = $mysql_db->query($sql_p_anuncio);
 
 
-                                            while ($row = $result->fetch_row()) {
-                                                printf("%s\n", $row[0]);
-                                            }
-                                            ?></strong></p>
+                    while ($row = $result->fetch_row()) {
+                        printf("%s\n", $row[0]);
+                    }
+                ?></strong></p>
 
                 <span class="float-right"><i class="fas fa-map-marker-alt"></i></span>
                 <p class="mb-1"><strong>Cidade:</strong>
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                   
                     $sql_p_anuncio = "SELECT cidade FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -58,7 +57,7 @@ if (isset($_GET['foto_anuncio'])){
                 <span class="float-right"><i class="fas fa-map-pin"></i></span>
                 <p class="mb-1"><strong>Bairro: </strong>
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                   
                     $sql_p_anuncio = "SELECT bairro FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -71,7 +70,7 @@ if (isset($_GET['foto_anuncio'])){
                 <span class="float-right"><i class="fas fa-map-pin"></i></span>
                 <p class="mb-1"><strong>Endereço:</strong>
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                  
                     $sql_p_anuncio = "SELECT rua FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -82,7 +81,6 @@ if (isset($_GET['foto_anuncio'])){
                     ?> ,
                     <?php
 
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
                     $sql_p_anuncio = "SELECT num FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -95,7 +93,7 @@ if (isset($_GET['foto_anuncio'])){
                 <span class="float-right"><i class="fas fa-mail-bulk"></i></span>
                 <p class="mb-1"><strong>CEP:</strong>
                     <?php
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
+                
                     $sql_p_anuncio = "SELECT cep FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -109,7 +107,6 @@ if (isset($_GET['foto_anuncio'])){
                 <p class="mb-3"><strong>Num. de Cômodos: </strong>
                 <?php
 
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
                     $sql_p_anuncio = "SELECT num_comodos FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -123,7 +120,6 @@ if (isset($_GET['foto_anuncio'])){
                 <p class="h5"><strong>Valor: </strong> R$
                     <?php
 
-                    $mysqli = new mysqli("localhost", "root", "", "hirev2");
                     $sql_p_anuncio = "SELECT valor FROM anuncio WHERE id = '$id_anuncio'";
                     $result = $mysql_db->query($sql_p_anuncio);
 
@@ -150,7 +146,6 @@ if (isset($_GET['foto_anuncio'])){
                         <p class="mb-1"><strong>Proprietário:
                                 <?php
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $sql_p_anuncio = "SELECT proprietario FROM anuncio WHERE id = '$id_anuncio'";
                                 $result = $mysql_db->query($sql_p_anuncio);
 
@@ -163,7 +158,6 @@ if (isset($_GET['foto_anuncio'])){
                         <p class="mb-1"><strong>Whatsapp:
                                 <?php
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $sql_p_anuncio = "SELECT whatsapp FROM anuncio WHERE id = '$id_anuncio'";
                                 $result = $mysql_db->query($sql_p_anuncio);
 
@@ -173,7 +167,18 @@ if (isset($_GET['foto_anuncio'])){
                                 }
                                 ?>
                             </strong>
-                            <a href="">Whatsapp</a>
+                            <a href="https://api.whatsapp.com/send?phone=+55
+                            <?php
+
+                            $sql_p_anuncio = "SELECT whatsapp FROM anuncio WHERE id = '$id_anuncio'";
+                            $result = $mysql_db->query($sql_p_anuncio);
+
+
+                            while ($row = $result->fetch_row()) {
+                            printf("%s\n", $row[0]);
+                            }
+                            ?>
+                            ">Whatsapp</a>
                         </p>
                     </div>
                 </div>
@@ -195,7 +200,7 @@ if (isset($_GET['foto_anuncio'])){
             <span class="float-right"><i class="fas fa-image"></i></span>
             <h1 class="h4">Fachada</h1>
             <hr>
-            <div class="fotorama" data-allowfullscreen="native" style="border-radius: 10px; width: 700px;">
+            <div class="fotorama" data-allowfullscreen="native" style="border-radius: 10px; width: 600px;">
                 <img src="../img/img_upload/<?php echo $foto_f ?>" alt="Imagem da fachada" class="img-fachada" >
             </div>
         </div>
