@@ -2,12 +2,12 @@
 // Verificação de login
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-  header("location: welcome.php");
+  header("location: view/welcome.php");
   exit;
 }
 
 // conexao do banco
-require_once "../config/config.php";
+require_once "config/config.php";
 
 // Define variaveis e inicializa com valores vazios
 $username = $password = '';
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               $_SESSION['username'] = $username;
 
               // Redireciona
-              header('location: welcome.php');
+              header('location: view/welcome.php');
             } else {
               // Erro senha
               $password_err = 'Senha Inválida.';
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php include '../includes/menuhome.php'; ?>
+<?php include 'includes/menuhome.php'; ?>
 
 <main>
 
@@ -129,4 +129,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </section>
 </main>
 
-<?php include '../includes/footerhome.php'; ?>
+<?php include 'includes/footerhome.php'; ?>
