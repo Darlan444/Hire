@@ -22,6 +22,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
             <div class="form-signin text-center">
                 <div class="card mb-4">
@@ -40,7 +41,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <h6 class="mb-0">E-mail</h6>
                             </div>
                             <div class="col-sm-8 text-secondary">
-                                <input type="text" width="30" class="form-control" name="newemail" id="newemail" value="<?php
+                                <input type="email" width="30" class="form-control" name="newemail" id="newemail" value="<?php
 
                                 $id = $_SESSION['id'];
 
@@ -74,6 +75,13 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 printf("%s\n", $row[0]);
                                 }
                                 ?>" required>
+                                <script>
+                                $('#newnome').keypress(function(e) {
+                                    var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+                                    if (keyCode > 47 && keyCode < 58) {
+                                        e.preventDefault();
+                                    }
+                                });</script>
                             </div>
                         </div>
                         <hr>
@@ -95,6 +103,13 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 printf("%s\n", $row[0]);
                                 }
                                 ?>" required>
+                                <script>
+                                $('#newsobrenome').keypress(function(e) {
+                                    var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+                                    if (keyCode > 47 && keyCode < 58) {
+                                        e.preventDefault();
+                                    }
+                                });</script>
                             </div>
                         </div>
 

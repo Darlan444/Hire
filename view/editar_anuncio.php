@@ -21,31 +21,12 @@ if(isset($_GET['editar_anuncio'])){
 
 
     <div class="container">
-
-        <!--
-    <div class="grupo_lista">
-      <h6>Anuncie ou Procure Casas! 😀</h6>
-        <ul class="ul_menu">
-            <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Alugar</button></a></li>
-            <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Comprar</button></a></li>
-            <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Anunciar</button></a></li>
-        </ul>
-    </div>
-    -->
-
         <br>
-
-        <!-- <div class="alert alert-warning" role="alert">
-    <h5><i data-feather="alert-triangle"></i></h5>
-    <p><small>O "Tipo: Disponível" só poderá ser editado para indisponível depois que o imóvel for adquirido.</small></p>
-    <p><small>Fique atento ao número de telefone inserido, pois os usuários entrarão em contato pelo número inserido.</small></p>
-</div> -->
         <br>
-
         <h5 style="text-align: left;">Editar Anuncio</h5>
         <hr class="linha">
 
-        <form method="POST" action="../controller/edt_anuncio.php" enctype="multipart/form-data">
+        <form method="POST" action="../controller/edt_anuncio.php">
 
             <!- Máscaras -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -281,7 +262,7 @@ if(isset($_GET['editar_anuncio'])){
             </div> -->
 
 
-                <button type="submit" class="btn btn-anunciar" onclick="return confirm('Tem certeza que deseja editar Anúncio?')">Salvar</button>
+                <button class="btn btn-editar">Salvar</button>
         </form>
 
 

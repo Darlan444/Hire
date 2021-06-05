@@ -12,40 +12,40 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 <?php
 
 require_once '../config/config.php';
-// Pega dados do form
-$newproprietario  = $_POST['newproprietario'];
-$newcidade        = $_POST['newcidade'];
-$newbairro        = $_POST['newbairro'];
-$newrua           = $_POST['newrua'];
-$newnum           = $_POST['newnum'];
-$newcep           = $_POST['newcep'];
-$newtipo          = $_POST['newtipo'];
-$newwhatsapp      = $_POST['newwhatsapp'];
-$newvalor         = $_POST['newvalor'];
-$newnum_comodos   = $_POST['newnum_comodos'];
 
-//Pega o id do anúncio
+    // Pega dados do form
+    $newproprietario  = $_POST['newproprietario'];
+    $newcidade        = $_POST['newcidade'];
+    $newbairro        = $_POST['newbairro'];
+    $newrua           = $_POST['newrua'];
+    $newnum           = $_POST['newnum'];
+    $newcep           = $_POST['newcep'];
+    $newtipo          = $_POST['newtipo'];
+    $newwhatsapp      = $_POST['newwhatsapp'];
+    $newvalor         = $_POST['newvalor'];
+    $newnum_comodos   = $_POST['newnum_comodos'];
 
-if (isset($_GET['editar_anuncio'])) {
-    $id_anuncio = $_GET['editar_anuncio'];
-}
+    //Pega o id do anúncio
 
-// UPDATE dados no banco
-$sql = "UPDATE `anuncio` SET `propritario`= '$newproprietario',`cidade`='$newcidade',`bairro`='$newbairrp',`rua`='$newrua',
- `num`= '$newnum',`cep`='$newscep',`tipo`='$newtipo',`whatsapp`='$newwhatsapp', `valor`='$newvalor',
- `num_comodos`='$newtelefone' WHERE id='$id_anuncio'";
+    if (isset($_GET['editar_anuncio'])) {
+        $id_anuncio = $_GET['editar_anuncio'];
+    }
 
-$new_sql = mysqli_query($mysql_db, $sql);
+    // UPDATE dados no banco
+    $sql_anun = "UPDATE `anuncio` SET `propritario`= '$newproprietario',`cidade`='$newcidade',`bairro`='$newbairrp',`rua`='$newrua',
+    `num`= '$newnum',`cep`='$newscep',`tipo`='$newtipo',`whatsapp`='$newwhatsapp', `valor`='$newvalor',
+    `num_comodos`='$newtelefone' WHERE id='$id_anuncio'";
 
-// Redireciona se feito o anuúncio
-if (mysqli_affected_rows($mysql_db) != 0) {
-    header('location: ../view/meusanuncios.php');
-} else {
-    echo "Não foi possivel editar!";
-}
+    $new_sql_anun = mysqli_query($mysql_db, $sql_anun);
 
-$mysql_db->close();
+    // Redireciona se feito o anuúncio
+    if (mysqli_affected_rows($mysql_db) != 0) {
+        header('location: ../view/meusanuncios.php');
+    } else {
+        echo "Não foi possivel editar!";
+    }
 
+    $mysql_db->close();
 
 
 ?>

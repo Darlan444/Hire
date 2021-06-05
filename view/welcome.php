@@ -34,7 +34,7 @@ include '../config/config.php';
   <h5 style="text-align: left;">Buscar</h5>
   <hr class="linha">
   <form action="" class="form-group">
-    <input type="text" class="form-control is-valid" placeholder="Buscar" id="buscar-input">
+    <input type="text" class="form-control is-valid" placeholder="Buscar" name="buscar-input" id="buscar-input">
     <div class="valid-feedback">
       Procure por Cidade, Bairro ou Rua!
     </div>
@@ -99,7 +99,7 @@ include '../config/config.php';
               <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
               <p class="card-text"><small class="text-muted">Anunciado em: <?php echo $data_c[$i] ?></small></p>
-              <a href="#" class="btn btn-card" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Detalhes</a>
+              <a href="area_anuncio.php" class="btn btn-card" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Detalhes</a>
             </div>
           </div>
         

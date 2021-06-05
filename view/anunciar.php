@@ -53,6 +53,14 @@ include '../includes/menudashboard.php';
                 <div class="form-group col-md-6">
                     <label for="proprietario">Proprietário*</label>
                     <input type="text" class="form-control" id="proprietario" name="proprietario" placeholder="Nome do Proprietário" required>
+                    <script>
+                        $('#proprietario').keypress(function(e) {
+                            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+                            if (keyCode > 47 && keyCode < 58) {
+                                e.preventDefault();
+                            }
+                        });
+                    </script>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="tipo">Tipo de Anuncio*</label>
