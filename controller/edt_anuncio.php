@@ -10,6 +10,11 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
 
 <?php
+$id_anuncio = '';
+
+if(isset($_GET['idanuncio'])){
+    $id_anuncio = $_GET['idanuncio'];
+}
 
 require_once '../config/config.php';
 
@@ -27,19 +32,20 @@ require_once '../config/config.php';
 
     //Pega o id do anúncio
 
-    if (isset($_GET['editar_anuncio'])) {
-        $id_anuncio = $_GET['editar_anuncio'];
+    if (isset($_GET['idanuncio'])) {
+        $id_anuncio = $_GET['idanuncio'];
     }
 
     // UPDATE dados no banco
-    $sql_anun = "UPDATE `anuncio` SET `propritario`= '$newproprietario',`cidade`='$newcidade',`bairro`='$newbairrp',`rua`='$newrua',
-    `num`= '$newnum',`cep`='$newscep',`tipo`='$newtipo',`whatsapp`='$newwhatsapp', `valor`='$newvalor',
-    `num_comodos`='$newtelefone' WHERE id='$id_anuncio'";
+    $sql = "UPDATE `anuncio` SET `propritario`= '$newproprietario', `cidade`='$newcidade', `bairro`='$newbairro', `rua`='$newrua', 
+    `num`= '$newnum', `cep`='$newcep', `tipo`='$newtipo', `whatsapp`='$newwhatsapp', `valor`='$newvalor', 
+    `num_comodos`='$newwhatsapp' WHERE id= $id_anuncio ";
 
-    $new_sql_anun = mysqli_query($mysql_db, $sql_anun);
+    $new_sql = mysqli_query($mysql_db, $sql);
 
-    // Redireciona se feito o anuúncio
+    // Redireciona se atualizado o anuúncio
     if (mysqli_affected_rows($mysql_db) != 0) {
+        $_SESSION['att_anuncio'] = 'Anúncio alterado com sucesso!';
         header('location: ../view/meusanuncios.php');
     } else {
         echo "Não foi possivel editar!";

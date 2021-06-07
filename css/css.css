@@ -291,3 +291,11 @@ footer{
 .quem-somos-text{
     text-align: justify;
 }
+
+.img-fachada{
+    max-width: 100%;
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+    border-radius: 10px;
+}

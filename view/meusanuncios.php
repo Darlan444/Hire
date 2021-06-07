@@ -44,6 +44,17 @@ include '../config/config.php';
       endif;
       unset($_SESSION['del_anuncio']);
       ?>
+      <?php if (isset($_SESSION['att_anuncio'])) : ?>
+        <div class="alert alert-success" role="alert">
+          <?= $_SESSION['att_anuncio']; ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php
+      endif;
+      unset($_SESSION['att_anuncio']);
+      ?>
 
   <div class="row" id="row_cards">
   <?php
@@ -101,7 +112,7 @@ include '../config/config.php';
 
               <p class="card-text"><small class="text-muted"><?php echo $data_c[$i] ?></small></p><br>
               
-              <a href="editar_anuncio.php?editar_anuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
+              <a href="editar_anuncio.php?editanuncio=<?php echo $id_anuncio[$i]; ?>" class="btn btn-card" style="width: 120px;" 
                 onmousemove="javascript: this.style.backgroundColor = '#1C7A26'" 
                 onmouseout="javascript: this.style.backgroundColor = '#000'" >Editar</a>
 

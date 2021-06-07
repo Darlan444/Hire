@@ -99,7 +99,7 @@ include '../config/config.php';
               <small id="proprietario">Proprietário: <?php echo $proprietario[$i] ?></small><br>
               <small id="endereco">Endereço: <?php echo $rua[$i] ,', ' ,$num[$i] ?></small>
               <p class="card-text"><small class="text-muted">Anunciado em: <?php echo $data_c[$i] ?></small></p>
-              <a href="area_anuncio.php?det_anuncio=<?php echo $id_anuncio[$i]; ?>&foto_anuncio=<?php echo $foto_f[$i]; ?>" class="btn btn-card" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Detalhes</a>
+              <a href="area_anuncio.php?det_anuncio=<?php echo $id_anuncio[$i]; ?>&foto_anuncio=<?php echo $foto_f[$i]; ?>&iduser=<?php echo $id_anunciante[$i]; ?>" class="btn btn-card" onmousemove="javascript: this.style.backgroundColor = '#FA2929'" onmouseout="javascript: this.style.backgroundColor = '#000'">Detalhes</a>
             </div>
           </div>
         

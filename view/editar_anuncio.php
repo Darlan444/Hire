@@ -14,11 +14,10 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 include '../includes/menudashboard.php';
 include '../config/config.php';
 
-if(isset($_GET['editar_anuncio'])){
-    $id_anuncio = $_GET['editar_anuncio'];
+if(isset($_GET['editanuncio'])){
+    $id_anuncio = $_GET['editanuncio'];
 }
 ?>
-
 
     <div class="container">
         <br>
@@ -26,7 +25,7 @@ if(isset($_GET['editar_anuncio'])){
         <h5 style="text-align: left;">Editar Anuncio</h5>
         <hr class="linha">
 
-        <form method="POST" action="../controller/edt_anuncio.php">
+        <form method="POST" action="../controller/edt_anuncio.php?idanuncio=<?php echo $id_anuncio; ?>">
 
             <!- Máscaras -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -69,15 +68,7 @@ if(isset($_GET['editar_anuncio'])){
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="cidade">Cidade*</label>
-                        <select id="newcidade" name="newcidade" class="form-control" value="<?php
-
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
-                            $sql_p_anuncio = "SELECT cidade FROM anuncio WHERE id = '$id_anuncio'";
-                            $result = $mysql_db->query($sql_p_anuncio);
-
-
-                            while ($row = $result->fetch_row()) {}
-                            ?>" required>
+                        <select id="newcidade" name="newcidade" class="form-control" required>
                             <option selected>Juazeiro do Norte - CE</option>
                             <option >Crato - CE</option>
                             <option >Barbalha - CE</option>
@@ -128,7 +119,7 @@ if(isset($_GET['editar_anuncio'])){
                         ?>" required>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="whatsapp">Whatsapp</label>
+                        <label for="whatsapp">Whatsapp*</label>
                         <input type="text" class="form-control" id="newwhatsapp" name="newwhatsapp" placeholder="(00) 00000-0000" value="<?php
 
                             $mysqli = new mysqli("localhost", "root", "", "hirev2");
@@ -201,16 +192,7 @@ if(isset($_GET['editar_anuncio'])){
                     </div>
                     <div class="form-group col-md-6">
                         <label for="num_comodos">Número de Cômodos*</label>
-                        <select id="newnum_comodos" name="newnum_comodos" class="form-control" value="<?php
-
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
-                            $sql_p_anuncio = "SELECT num_comodos FROM anuncio WHERE id = '$id_anuncio'";
-                            $result = $mysql_db->query($sql_p_anuncio);
-
-
-                            while ($row = $result->fetch_row()) {
-                            }
-                            ?>" required>
+                        <select id="newnum_comodos" name="newnum_comodos" class="form-control" required>
                             <option selected>3</option>
                             <option >4</option>
                             <option >5</option>
@@ -260,8 +242,6 @@ if(isset($_GET['editar_anuncio'])){
                     <input type="file" class="form-control-file" id="" name="" required multiple> 
                 </div>
             </div> -->
-
-
                 <button class="btn btn-editar">Salvar</button>
         </form>
 
