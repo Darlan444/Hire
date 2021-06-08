@@ -160,18 +160,18 @@ if (isset($_GET['foto_anuncio'])) {
                             </strong>
                         </p>
 
-                        <p class="mb-1"><strong>E-mail:</strong> 
-                                <?php
+                        <p class="mb-1"><strong>E-mail:</strong>
+                            <?php
 
-                                $sql_id_anunciante = "SELECT email FROM users WHERE id = '$id_user'";
-                                $result = $mysql_db->query($sql_id_anunciante);
+                            $sql_id_anunciante = "SELECT email FROM users WHERE id = '$id_user'";
+                            $result = $mysql_db->query($sql_id_anunciante);
 
 
-                                while ($row = $result->fetch_row()) {
-                                    printf("%s\n", $row[0]);
-                                }
-                                ?>
-                            
+                            while ($row = $result->fetch_row()) {
+                                printf("%s\n", $row[0]);
+                            }
+                            ?>
+
                         </p>
 
                         <p class="mb-1"><strong>Whatsapp:
@@ -189,7 +189,7 @@ if (isset($_GET['foto_anuncio'])) {
                             }
                             ?>
                             " target="_blank">
-                            <?php
+                                <?php
 
                                 $sql_p_anuncio = "SELECT whatsapp FROM anuncio WHERE id = '$id_anuncio'";
                                 $result = $mysql_db->query($sql_p_anuncio);
@@ -198,7 +198,7 @@ if (isset($_GET['foto_anuncio'])) {
                                 while ($row = $result->fetch_row()) {
                                     printf("%s\n", $row[0]);
                                 }
-                            ?></a>
+                                ?></a>
                         </p>
                     </div>
                 </div>
@@ -226,17 +226,24 @@ if (isset($_GET['foto_anuncio'])) {
             </div>
         </div>
 
-        <!--FOTOS COMODOS-->                        
+        <!--FOTOS COMODOS-->
+
+        <?php
+        $sql_comodos = "SELECT * FROM img_comodos WHERE id_anuncio ='$id_anuncio'";
+        $result_select_comodos = $mysql_db->query($sql_comodos) or die($mysql_db->error);
+        ?>
+
+
+
         <div class="col-xl-6 col-md-4 mb-3">
             <div class="area-cont-anuncio mb-4">
                 <span class="float-right"><i class="fas fa-images"></i></span>
                 <h1 class="h4">Cômodos</h1>
                 <hr>
                 <div class="fotorama" data-allowfullscreen="native" data-autoplay="true" style="border-radius: 10px;">
-                    <img class="img-comodo" src="https://i.pinimg.com/736x/48/54/58/48545831887c996201cc8e639ba81c8a.jpg" alt="">
-                    <img class="img-comodo" src="https://i.pinimg.com/564x/e1/83/71/e183718105cc704115bb48dc3b0706e6.jpg" alt="">
-                    <img class="img-comodo" src="https://i.pinimg.com/564x/42/f2/98/42f29801282e58b4484f2a5669e60d0f.jpg" alt="">
-                    <img class="img-comodo" src="https://i.pinimg.com/736x/48/54/58/48545831887c996201cc8e639ba81c8a.jpg" alt="">
+                    <?php while ($dados_img_comodos = $result_select_comodos->fetch_array()) { ?>
+                        <img class="fotorama" src="<?php echo "../img/img_comodos/" . $dados_img_comodos["img_file"]; ?>" alt="Fotos Cômodos">
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -247,5 +254,5 @@ if (isset($_GET['foto_anuncio'])) {
 
 
 <?php
-include '../includes/footerdashboard.php'; 
+include '../includes/footerdashboard.php';
 ?>

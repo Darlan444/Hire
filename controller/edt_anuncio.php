@@ -39,12 +39,12 @@ require_once '../config/config.php';
     // UPDATE dados no banco
     $sql = "UPDATE `anuncio` SET `propritario`= '$newproprietario', `cidade`='$newcidade', `bairro`='$newbairro', `rua`='$newrua', 
     `num`= '$newnum', `cep`='$newcep', `tipo`='$newtipo', `whatsapp`='$newwhatsapp', `valor`='$newvalor', 
-    `num_comodos`='$newwhatsapp' WHERE id= $id_anuncio ";
+    `num_comodos`='$newnum_comodos' WHERE id= '$id_anuncio' ";
 
     $new_sql = mysqli_query($mysql_db, $sql);
 
     // Redireciona se atualizado o anuúncio
-    if (mysqli_affected_rows($mysql_db) != 0) {
+    if (mysqli_affected_rows($mysql_db) > 0) {
         $_SESSION['att_anuncio'] = 'Anúncio alterado com sucesso!';
         header('location: ../view/meusanuncios.php');
     } else {

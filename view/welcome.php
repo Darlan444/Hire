@@ -33,14 +33,15 @@ include '../config/config.php';
 
   <h5 style="text-align: left;">Buscar</h5>
   <hr class="linha">
-  <form action="" class="form-group">
-    <input type="text" class="form-control is-valid" placeholder="Buscar" name="buscar-input" id="buscar-input">
-    <div class="valid-feedback">
-      Procure por Cidade, Bairro ou Rua!
-    </div>
-    <button class="btn btn-buscar">Buscar</button>
-
-  </form>
+    <form method="GET" action="buscar-anuncio.php">
+        <small>Procure por Cidade, Bairro ou Tipo de Anúncio</small>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control mr-1 border text-capitalize" name="pesquisar_anuncio" id="pesquisar_anuncio" placeholder="Pesquisar Anúncio">
+            <span class="input-group-btn">
+                <button class="btn btn-search-painel" style="font-weight: 300;" type="submit">Procurar</button>
+            </span>
+        </div>
+    </form>
 
 
   <br>

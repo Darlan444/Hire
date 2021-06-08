@@ -158,16 +158,29 @@ include '../includes/menudashboard.php';
                 </div>
             </div> -->
 
-            <div class="form-group col-md-4 ">
-                <label for="exampleInputFile">Foto da Fachada<i class="fas fa-paw"></i></label>
-                <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" name="ftfachada" class="custom-file-input" id="ftfachada" required>
-                        <label class="custom-file-label" for="foto_f">Foto</label>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 ">
+                    <label for="exampleInputFile">Foto da Fachada<i class="fas fa-paw"></i></label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="ftfachada" class="custom-file-input" id="ftfachada" required>
+                            <label class="custom-file-label" for="foto_f">Foto</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <div class="form-group col-md-6 ">
+                    <label for="exampleInputFile">Fotos dos Cômodos<i class="fas fa-paw"></i></label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="ftcomodos[]" class="custom-file-input" id="ftcomodos[]" multiple required>
+                            <label class="custom-file-label" for="foto_f">Foto</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             <!-- <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="">Fotos do Cômodo*</label>
