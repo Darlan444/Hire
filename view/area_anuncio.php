@@ -234,15 +234,14 @@ if (isset($_GET['foto_anuncio'])) {
         ?>
 
 
-
         <div class="col-xl-6 col-md-4 mb-3">
             <div class="area-cont-anuncio mb-4">
                 <span class="float-right"><i class="fas fa-images"></i></span>
                 <h1 class="h4">Cômodos</h1>
                 <hr>
-                <div class="fotorama" data-allowfullscreen="native" data-autoplay="true" style="border-radius: 10px;">
+                <div class="fotorama" data-allowfullscreen="native" data-autoplay="true" style="border-radius: 10px; width: 400px; height: 500px;">
                     <?php while ($dados_img_comodos = $result_select_comodos->fetch_array()) { ?>
-                        <img class="fotorama" src="<?php echo "../img/img_comodos/" . $dados_img_comodos["img_file"]; ?>" alt="Fotos Cômodos">
+                        <img class="img-comodos" src="<?php echo "../img/img_comodos/" . $dados_img_comodos["img_file"]; ?>" alt="">
                     <?php } ?>
                 </div>
             </div>
