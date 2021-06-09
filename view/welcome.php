@@ -108,18 +108,11 @@ include '../config/config.php';
     <?php
     $i++;
     }
-    
   }
-
     ?>
-
-    
       </div>
-
       <br>
-
       <br>
-
 </div>
 
 <footer>
