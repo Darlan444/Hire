@@ -36,7 +36,7 @@ include '../config/config.php';
     <form method="GET" action="buscar-anuncio.php">
         <small>Procure por Cidade, Bairro ou Tipo de Anúncio</small>
         <div class="input-group mb-3">
-            <input type="text" class="form-control mr-1 border text-capitalize" name="pesquisar_anuncio" id="pesquisar_anuncio" placeholder="Pesquisar Anúncio">
+            <input type="text" class="form-control mr-1 border text-capitalize" name="pesquisar_anuncio" id="pesquisar_anuncio" placeholder="Pesquisar Anúncio" required>
             <span class="input-group-btn">
                 <button class="btn btn-search-painel" style="font-weight: 300;" type="submit">Procurar</button>
             </span>

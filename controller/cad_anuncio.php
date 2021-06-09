@@ -114,7 +114,7 @@ if (isset($_FILES['ftcomodos'])) {
             $mysql_db->query("UPDATE img_comodos SET id_anuncio ='$id_anuncio' WHERE id_anuncio = 0");
         } else {
             $_SESSION['extensao_err'] = '<b>Erro ao enviar fotos dos cômodos!</b> Você inseriu arquivos não suportados pelo sistema';
-            header("Location: ../pages/criar_anuncio.php");
+            header("Location: ../view/meusanuncios.php");
         }
     }
 
