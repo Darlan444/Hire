@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-lg btn-login btn-block" value="Alterar Senha">
-                    <a class="btn btn-block btn-link bg-light" href="welcome.php">Cancelar</a>
+                    <a class="btn btn-block btn-link bg-light" href="../view/welcome.php">Cancelar</a>
                 </div>
             </form>
         </section>
