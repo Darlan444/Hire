@@ -22,7 +22,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
             <div class="form-signin text-center">
                 <div class="card mb-4">

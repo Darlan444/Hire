@@ -34,7 +34,7 @@ if(isset($_GET['editanuncio'])){
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="proprietario">Proprietário*</label>
+                        <label for="newproprietario">Proprietário*</label>
                         <input type="text" class="form-control" id="newproprietario" name="newproprietario" placeholder="Nome do Proprietário" value="<?php
 
                             $mysqli = new mysqli("localhost", "root", "", "hirev2");
@@ -46,6 +46,14 @@ if(isset($_GET['editanuncio'])){
                             printf("%s\n", $row[0]);
                             }
                             ?>" required>
+                    <script>
+                            $('#newproprietario').keypress(function(e) {
+                            var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
+                            if (keyCode > 47 && keyCode < 58) {
+                                e.preventDefault();
+                            }
+                        });
+                    </script>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="tipo">Tipo de Anuncio*</label>

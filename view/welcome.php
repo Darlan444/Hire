@@ -15,22 +15,8 @@ include '../config/config.php';
 
 <div class="container">
 
-  <!--
-        
-        Código não usado!
-
-        <div class="grupo_lista">
-          <h6>Anuncie ou Procure Casas! 😀</h6>
-            <ul class="ul_menu">
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Alugar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Comprar</button></a></li>
-                <li class="lista_menu"><a href="" class="link_menu"><button class="btn btn-menu">Anunciar</button></a></li>
-            </ul>
-        </div>
-        -->
-
   <br>
-
+  <!- CAMPO DE BUSCA -->
   <h5 style="text-align: left;">Buscar</h5>
   <hr class="linha">
     <form method="GET" action="buscar-anuncio.php">
