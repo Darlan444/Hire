@@ -56,7 +56,7 @@ include '../includes/menudashboard.php';
                     <script>
                         $('#proprietario').keypress(function(e) {
                             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
-                            if (keyCode > 47 && keyCode < 58) {
+                            if (keyCode > 32 && keyCode < 65 ) {
                                 e.preventDefault();
                             }
                         });
@@ -95,14 +95,14 @@ include '../includes/menudashboard.php';
                 </div>
                 <div class="form-group col-md-3">
                     <label for="whatsapp">Whatsapp</label>
-                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" minlength="15" required>
                     <script type="text/javascript">
                         $("#whatsapp").mask("(00) 90000-0000");
                     </script>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="cep">CEP*</label>
-                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
+                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" minlength="9" maxlength="9" required>
                     <script type="text/javascript">
                         $("#cep").mask("00000-000");
                     </script>

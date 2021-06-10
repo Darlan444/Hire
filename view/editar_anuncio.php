@@ -49,7 +49,7 @@ if(isset($_GET['editanuncio'])){
                     <script>
                             $('#newproprietario').keypress(function(e) {
                             var keyCode = (e.keyCode ? e.keyCode : e.which); // Variar a chamada do keyCode de acordo com o ambiente.
-                            if (keyCode > 47 && keyCode < 58) {
+                            if (keyCode > 32 && keyCode < 65) {
                                 e.preventDefault();
                             }
                         });
@@ -128,7 +128,7 @@ if(isset($_GET['editanuncio'])){
                     </div>
                     <div class="form-group col-md-3">
                         <label for="whatsapp">Whatsapp*</label>
-                        <input type="text" class="form-control" id="newwhatsapp" name="newwhatsapp" placeholder="(00) 00000-0000" value="<?php
+                        <input type="text" class="form-control" id="newwhatsapp" name="newwhatsapp" placeholder="(00) 00000-0000" minlength="15" value="<?php
 
                             $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT whatsapp FROM anuncio WHERE id = '$id_anuncio'";
@@ -145,7 +145,7 @@ if(isset($_GET['editanuncio'])){
                     </div>
                     <div class="form-group col-md-3">
                         <label for="cep">CEP*</label>
-                        <input type="text" class="form-control" id="newcep" name="newcep" placeholder="00000-000" maxlength="9" value="<?php
+                        <input type="text" class="form-control" id="newcep" name="newcep" placeholder="00000-000" minlength="9" maxlength="9" value="<?php
 
                             $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT cep FROM anuncio WHERE id = '$id_anuncio'";
