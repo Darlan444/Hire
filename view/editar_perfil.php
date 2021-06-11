@@ -44,7 +44,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
                                 $id = $_SESSION['id'];
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $emailperfil = "SELECT email FROM users WHERE id = '$id'";
                                 $result = $mysql_db->query($emailperfil);
 
@@ -65,7 +64,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
                                 $id = $_SESSION['id'];
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $nomeperfil = "SELECT nome FROM users WHERE id = '$id'";
                                 $result = $mysql_db->query($nomeperfil);
 
@@ -93,7 +91,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
                                 $id = $_SESSION['id'];
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $sobrenomeperfil = "SELECT sobrenome FROM users WHERE id = '$id'";
                                 $result = $mysql_db->query($sobrenomeperfil);
 
@@ -122,7 +119,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
                                 $id = $_SESSION['id'];
 
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
                                 $telefoneperfil = "SELECT telefone FROM users WHERE id = '$id'";
                                 $result = $mysql_db->query($telefoneperfil);
 

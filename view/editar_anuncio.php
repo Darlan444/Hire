@@ -37,7 +37,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="newproprietario">Proprietário*</label>
                         <input type="text" class="form-control" id="newproprietario" name="newproprietario" placeholder="Nome do Proprietário" value="<?php
 
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT proprietario FROM anuncio WHERE id = '$id_anuncio'";
                             $result = $mysql_db->query($sql_p_anuncio);
 
@@ -59,7 +58,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="tipo">Tipo de Anuncio*</label>
                         <select id="newtipo" name="newtipo" class="form-control" value="<?php
 
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT tipo FROM anuncio WHERE id = '$id_anuncio'";
                             $result = $mysql_db->query($sql_p_anuncio);
 
@@ -86,7 +84,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="rua">Endereço*</label>
                         <input type="text" class="form-control" id="newrua" name="newrua" placeholder="Rua..." value="<?php
 
-                        $mysqli = new mysqli("localhost", "root", "", "hirev2");
                         $sql_p_anuncio = "SELECT rua FROM anuncio WHERE id = '$id_anuncio'";
                         $result = $mysql_db->query($sql_p_anuncio);
 
@@ -100,7 +97,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="num">N°*</label>
                         <input type="text" class="form-control" id="newnum" name="newnum" value="<?php
 
-                        $mysqli = new mysqli("localhost", "root", "", "hirev2");
                         $sql_p_anuncio = "SELECT num FROM anuncio WHERE id = '$id_anuncio'";
                         $result = $mysql_db->query($sql_p_anuncio);
 
@@ -116,7 +112,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="bairro">Bairro*</label>
                         <input type="text" class="form-control" id="newbairro" name="newbairro" placeholder="Bairro" value="<?php
 
-                        $mysqli = new mysqli("localhost", "root", "", "hirev2");
                         $sql_p_anuncio = "SELECT bairro FROM anuncio WHERE id = '$id_anuncio'";
                         $result = $mysql_db->query($sql_p_anuncio);
 
@@ -130,7 +125,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="whatsapp">Whatsapp*</label>
                         <input type="text" class="form-control" id="newwhatsapp" name="newwhatsapp" placeholder="(00) 00000-0000" minlength="15" value="<?php
 
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT whatsapp FROM anuncio WHERE id = '$id_anuncio'";
                             $result = $mysql_db->query($sql_p_anuncio);
 
@@ -147,7 +141,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="cep">CEP*</label>
                         <input type="text" class="form-control" id="newcep" name="newcep" placeholder="00000-000" minlength="9" maxlength="9" value="<?php
 
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT cep FROM anuncio WHERE id = '$id_anuncio'";
                             $result = $mysql_db->query($sql_p_anuncio);
 
@@ -183,7 +176,6 @@ if(isset($_GET['editanuncio'])){
                         <label for="valor">Valor*</label>
                         <input type="text" class="form-control" id="newvalor" name="newvalor" placeholder="Valor" value="<?php
 
-                            $mysqli = new mysqli("localhost", "root", "", "hirev2");
                             $sql_p_anuncio = "SELECT valor FROM anuncio WHERE id = '$id_anuncio'";
                             $result = $mysql_db->query($sql_p_anuncio);
 
@@ -214,42 +206,7 @@ if(isset($_GET['editanuncio'])){
                     </div>
                 </div>
 
-                <!-- <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="foto_f">Foto da Fachada*</label>
-                <input type="file" class="form-control-file" id="foto_f" name="foto_f" required>
-            </div>
-        </div> -->
-
-                <!-- <div class="form-group col-md-4 ">
-                    <label for="exampleInputFile">Foto da Fachada<i class="fas fa-paw"></i></label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" name="newfoto_f" class="custom-file-input" id="newfoto_f" value="<?php
-
-                                $mysqli = new mysqli("localhost", "root", "", "hirev2");
-                                $sql_p_anuncio = "SELECT foto_f FROM anuncio WHERE id = '$id_anuncio'";
-                                $result = $mysql_db->query($sql_p_anuncio);
-
-
-                                while ($row = $result->fetch_row()) {
-                                printf("%s\n", $row[0]);
-                                }
-                                ?>">
-                            <label class="custom-file-label" for="foto_f">Foto</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-upload"></i></span>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="">Fotos do Cômodo*</label>
-                    <input type="file" class="form-control-file" id="" name="" required multiple> 
-                </div>
-            </div> -->
+                
                 <button class="btn btn-editar">Salvar</button>
         </form>
 

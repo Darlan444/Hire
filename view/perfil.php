@@ -19,20 +19,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <br><br>
     <p id="p_perfil">Perfil</p>
 
-    <!-- <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    <img src="img/perfil.jpg" alt="Admin" class="rounded-circle" width="150">
-                    <div class="mt-3">
-                      <h4><?php echo $_SESSION['username']; ?><img src="img/check.svg" alt="" class="verificado" width="15" style="margin-bottom: 20px;"></h4>
-                      <p class="text-muted font-size-sm">Juazeiro do Norte - CE, Salesianos</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
     <div class="form-signin text-center">
       <div class="card mb-4">
 
@@ -67,7 +53,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
               $id = $_SESSION['id'];
 
-              $mysqli = new mysqli("localhost", "root", "", "hirev2");
               $emailperfil = "SELECT email FROM users WHERE id = '$id'";
               $result = $mysql_db->query($emailperfil);
 
@@ -88,7 +73,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
             $id = $_SESSION['id'];
 
-            $mysqli = new mysqli("localhost", "root", "", "hirev2");
             $nomeperfil = "SELECT nome FROM users WHERE id = '$id'";
             $result = $mysql_db->query($nomeperfil);
 
@@ -109,7 +93,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
             $id = $_SESSION['id'];
 
-            $mysqli = new mysqli("localhost", "root", "", "hirev2");
             $sobrenomeperfil = "SELECT sobrenome FROM users WHERE id = '$id'";
             $result = $mysql_db->query($sobrenomeperfil);
 
@@ -131,7 +114,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
             $id = $_SESSION['id'];
 
-            $mysqli = new mysqli("localhost", "root", "", "hirev2");
             $telefoneperfil = "SELECT telefone FROM users WHERE id = '$id'";
             $result = $mysql_db->query($telefoneperfil);
 
