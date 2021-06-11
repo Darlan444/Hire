@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Jun-2021 às 21:25
+-- Tempo de geração: 12-Jun-2021 às 00:26
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -59,7 +59,10 @@ INSERT INTO `anuncio` (`id`, `proprietario`, `cidade`, `bairro`, `rua`, `num`, `
 (53, 'cu', 'Juazeiro do Norte - CE', 'cxu', 'cu', 123, '88888-888', 'rsz_carros_tunados1-1623192675-6.jpg ', 'Aluguel', '(99) 99999-9999', '20', 3, 6, '2021-06-08', 1),
 (54, 'cu', 'Crato - CE', 'tyeste', 'teste', 123, '66666-666', 'rsz_carros_tunados1-1623192793-6.jpg ', 'Aluguel', '(66) 66666-6666', '656.567,57', 3, 6, '2021-06-08', 1),
 (55, 'Maria', 'Juazeiro do Norte - CE', 'Centro', 'Rua São Paulo', 442, '63000-000', 'frt-1623197851-6.jpg ', 'Aluguel', '(88) 99989-9988', '450,00', 6, 6, '2021-06-08', 1),
-(56, 'José', 'Juazeiro do Norte - CE', 'Centro', 'Rua São Pedro', 332, '63000-000', 'frt-1623198825-6.jpg ', 'Aluguel', '(88) 98898-9988', '750,00', 6, 6, '2021-06-08', 1);
+(56, 'José', 'Juazeiro do Norte - CE', 'Centro', 'Rua São Pedro', 332, '63000-000', 'frt-1623198825-6.jpg ', 'Aluguel', '(88) 98898-9988', '750,00', 6, 6, '2021-06-08', 1),
+(57, 'ads', 'Juazeiro do Norte - CE', 'ads', 'sdasda', 321, '51111-', 'rsz_carros_tunados1-1623282216-6.jpg ', 'Aluguel', '(88) 88898-9', '2.132,31', 6, 6, '2021-06-09', 1),
+(58, 'sadsda', 'Juazeiro do Norte - CE', 'dassad', 'sda', 231, '65465-465', 'frt-1623282297-6.jpg ', 'Aluguel', '(88) 46545-44', '2.313,21', 3, 6, '2021-06-09', 1),
+(59, 'dassda', 'Juazeiro do Norte - CE', 'dsasda', 'dsadsadsa', 3212, '23132-131', 'cmd-1623283907-6.jpg ', 'Aluguel', '(31) 32123-2123', '3.212,31', 3, 6, '2021-06-09', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +91,16 @@ INSERT INTO `img_comodos` (`id`, `id_anuncio`, `id_user`, `img_file`) VALUES
 (7, 55, 6, 'cmd.jpg'),
 (8, 55, 6, 'cmd2.jpg'),
 (10, 56, 6, 'cmd-1623198825.jpg'),
-(11, 56, 6, 'cmd2-1623198825.jpg');
+(11, 56, 6, 'cmd2-1623198825.jpg'),
+(12, 57, 6, 'cmd-1623282216.jpg'),
+(13, 57, 6, 'cmd2-1623282216.jpg'),
+(14, 57, 6, 'frt.jpg'),
+(15, 58, 6, 'cmd-1623282297.jpg'),
+(16, 58, 6, 'cmd2-1623282297.jpg'),
+(17, 58, 6, 'rsz_carros_tunados1-1623282297.jpg'),
+(18, 59, 6, 'cmd2-1623283907.jpg'),
+(19, 59, 6, 'frt-1623283907.jpg'),
+(20, 59, 6, 'rsz_carros_tunados1-1623283907.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `anuncio`
 --
 ALTER TABLE `anuncio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `img_comodos`
 --
 ALTER TABLE `img_comodos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `users`
