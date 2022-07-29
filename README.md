@@ -20,7 +20,9 @@ Esse foi um trabalho de conclusão do curso de Análise e desenvolvimento de Sis
 
 ------------------------------------------------------------------------------------------------
 Página Inical
+--
 ![HIRE-HOME](https://user-images.githubusercontent.com/81045126/181686936-e9995e49-ad86-4382-9bf1-6a68ad5e5bc8.PNG)
 --------------------------------------------------------------------------------------------------------------------
 Página de Anúncios do User
+--
 ![HIRE-MANUN](https://user-images.githubusercontent.com/81045126/181686953-467e6459-684d-426a-82f5-15071bb60c70.PNG)
