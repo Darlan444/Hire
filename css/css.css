@@ -21,9 +21,20 @@ body{
     flex-direction: column;
 }
 
+.scrolltotop{
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    right: 2vw;
+    top: 90vh;
+}
+
 .navbar{
     background-color: black;
     font-weight: 700;
+    position: relative;
+    top: 0;
 }
 
 .navbar-light .navbar-brand{

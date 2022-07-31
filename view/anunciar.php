@@ -19,6 +19,8 @@ include '../includes/menudashboard.php';
 
 <div class="container">
 
+
+
     <!--
         <div class="grupo_lista">
           <h6>Anuncie ou Procure Casas! 😀</h6>
@@ -100,6 +102,7 @@ include '../includes/menudashboard.php';
                         $("#whatsapp").mask("(00) 90000-0000");
                     </script>
                 </div>
+                
                 <div class="form-group col-md-3">
                     <label for="cep">CEP*</label>
                     <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" minlength="9" maxlength="9" required>
@@ -108,8 +111,6 @@ include '../includes/menudashboard.php';
                     </script>
                 </div>
             </div>
-
-
 
 
             <!-- <div class="form-group col-md-3">
@@ -192,7 +193,6 @@ include '../includes/menudashboard.php';
             <button type="submit" name="btn-anunciar" class="btn btn-anunciar" onclick="return confirm('Tem certeza que deseja criar Anúncio?')">Anunciar</button>
             <button type="reset" class="btn btn-limpar" onclick="return confirm('Tem certeza que deseja limpar informações inseridas?')">Limpar</button>
     </form>
-
 
 
     <br>

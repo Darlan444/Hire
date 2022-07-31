@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <div class="grupo_lista">
     <ul class="ul_quem_somos">
-      <li class="lista_quem_somos"><a href="quemsomos.php" class="link_quem_somos"><button class="btn btn-quemsomos">Quem Somos?</button></a></li>
+      <li class="lista_quem_somos"><a href="view/quemsomos.php" class="link_quem_somos"><button class="btn btn-quemsomos">Quem Somos?</button></a></li>
     </ul>
   </div>
 

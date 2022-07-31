@@ -12,6 +12,8 @@ include '../includes/menudashboard.php';
 include '../config/config.php';
 ?>
 
+<script src="../script/totop.js"></script>
+<button class="scrolltotop" onclick="scrolltotop()">TOP</button>
 
 <div class="container">
 
