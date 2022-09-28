@@ -28,6 +28,6 @@ Página de Anúncios do User
 ![HIRE-MANUN](https://user-images.githubusercontent.com/81045126/181686953-467e6459-684d-426a-82f5-15071bb60c70.PNG)
 
 -------------------------------------------------------------------------------------------------------------------
-Form Anunciar
+Página para anunciar imóvel
 --
 ![HIRE-ANUNFORM](https://user-images.githubusercontent.com/81045126/181687329-a22b54fe-0ca7-48f8-8941-f2ba17bb23bd.PNG)
